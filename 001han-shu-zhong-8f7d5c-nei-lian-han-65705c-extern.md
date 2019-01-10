@@ -98,3 +98,8 @@ void display(int a){
 如果我们编写一个C语言函数明文: `int sum(int a, int b)` ,直接在C++中使用,那么因为C++中有函数重载,C++环境会去找名为 sum_int_int的函数,肯定找不到,系统报错. 因此在导入时 我们使用extern "C" 说明, sum 这个函数是C语言中的,不要使用函数重载(name mangling) 技术来调用
 
 
+**☆☆☆☆☆**
+**5、编写通用的C语言文件,完全兼容C++ ?**
+![](/assets/Snip20190110_8.png)
+
+
