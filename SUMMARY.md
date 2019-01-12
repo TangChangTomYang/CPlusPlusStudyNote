@@ -9,4 +9,5 @@
 * [004- C++中的extern "C"](004-czhong-deextern-c.md)
 * [005- C++ 默认参数](005-c++-mo-ren-can-shu.md)
 * [006-C++ 中的内联函数与宏定义](006-c++-zhong-de-nei-lian-han-shu-yu-hong-ding-yi.md)
+* [007- 条件编译与C++中的\#pragma](007-tiao-jian-bian-yi-yu-c-zhong-768423-pragma.md)
 
