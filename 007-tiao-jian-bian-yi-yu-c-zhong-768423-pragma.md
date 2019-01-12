@@ -5,4 +5,5 @@
 ![](/assets/Snip20190112_5.png)
 
 2、**#pragma once** 可以防止整个文件的内容被重复包含
+
 ![](/assets/Snip20190112_8.png)
