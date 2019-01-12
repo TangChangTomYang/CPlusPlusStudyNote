@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [First Chapter](chapter1.md)
 * [000- C 语言基础](000-c-yu-yan-ji-chu.md)
   * [001-指向函数的指针](000-c-yu-yan-ji-chu/001zhi-xiang-han-shu-de-zhi-zhen.md)
 * [001-C++中的函数入口](001-czhong-de-han-shu-ru-kou.md)
@@ -11,4 +10,5 @@
 * [005- C++ 默认参数](005-c++-mo-ren-can-shu.md)
 * [006-C++ 中的内联函数与宏定义](006-c++-zhong-de-nei-lian-han-shu-yu-hong-ding-yi.md)
 * [007- 条件编译与C++中的\#pragma](007-tiao-jian-bian-yi-yu-c-zhong-768423-pragma.md)
+* [008-C++ 中的引用](008-c++-zhong-de-yin-yong.md)
 
