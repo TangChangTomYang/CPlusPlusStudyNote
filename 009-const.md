@@ -59,9 +59,10 @@ double const &rAge2 = age ; // 常引用可以存储不同的数据类型的值
 ```
 
 
-5 const 参数的特点
+5、const 参数的特点
 ![](/assets/Snip20190113_12.png)
 
-
+6、const 的引用作为函数参数可以和非const 的引用作为参数 构成重载
+ ![](/assets/Snip20190113_13.png)
 
 
