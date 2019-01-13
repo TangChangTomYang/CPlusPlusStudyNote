@@ -10,6 +10,33 @@
 
 
 <br>
-#### 二、指向函数的指针, 作为函数的参数
+#### 三、指向函数的指针, 作为函数的参数
 
 ![](/assets/Snip20190111_4.png)
+
+
+<br>
+#### 四、结构体/ 指向结构体的指针
+```
+结构体成员变量访问的方式
+Student {
+    int age;
+    int weight;
+};
+
+// 结构 体访问成员变量
+Student stu = {10, 20};
+stu.age = 20;
+stu.weight = 40;
+
+// 结构体指针
+Student *stu1 = &stu;
+stu1 -> age = 30;
+stu1 -> weight = 40;
+```
+
+
+
+
+
+
