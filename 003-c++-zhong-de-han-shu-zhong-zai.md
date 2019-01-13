@@ -12,7 +12,7 @@ C++ 中的函数重载指的是: **函数名相同, 参数类型不同/ 参数�
 
 
 **4、C++ 函数重载的本质**
-C++ 采用的name mangling 或者叫 name decoration的技术(即: C++ 编译器默认会对符号名(变量名/ 函数名等) 进行改编/ 修饰)
+C++ 采用的**name mangling 或者叫 name decoration的技术**(即: C++ 编译器默认会对符号名(变量名/ 函数名等) 进行改进/ 修饰)
 比如:
 ```
 void display(int a){
