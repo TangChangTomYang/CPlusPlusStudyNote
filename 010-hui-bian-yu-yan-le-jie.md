@@ -23,7 +23,13 @@
 |操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx|
 |常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax|
 |jmp 指令| jmp *%edx <br> jmp *0x4001002<br> jmp *(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax]| 在AT&T的jmp地址前面要加 型号 *|
+|操作数长度| movl %eax,%edx <br> movb $0x10, %al <br> leaw 0x10(%dx),%ax| mov edx, eax<br> mov al, 0x10<br> lea ax,[dx+0x10]|
 
+
+
+一般规律:
+R 开头的寄存器是64bit 的, 占8个字节
+E 开头的寄存器是32bit 的, 占4字节
 
 
 
