@@ -62,8 +62,19 @@ E 开头的寄存器是32bit 的, 占4字节
 - sub op1, op2
 类似于 op1 = op1 -op2;
 
-- inc op
-类似于 op = op + 1;
+- inc op  //increase
+自增, 类似于 op = op + 1;
+
+- dec op  //decrease
+自减, 类似于 op = op -1;
+
+- jmp 内存地址   // 类似于go to 语句  
+跳转到某个内存地址去执行代码
+j 开头的一般都是跳转, 大多数是带条件的跳转, 一般跟 test/ cmp 等指令配合使用.
+
+
+
+
 
 
 
