@@ -14,4 +14,5 @@ m_ 开头, 比如:定义成员变量: int m_age;
 s_ 开头, 比如: 定义静态变量: static int s_age;
 
 - 常亮
-c_开头, 比如: 定义常亮: const 
+c_开头, 比如: 定义常亮: const int c_age;
+
