@@ -16,3 +16,4 @@ s_ 开头, 比如: 定义静态变量: static int s_age;
 - 常亮
 c_开头, 比如: 定义常亮: const int c_age;
 
+使用驼峰表示,比如: int myAge; void doHomeWork();
