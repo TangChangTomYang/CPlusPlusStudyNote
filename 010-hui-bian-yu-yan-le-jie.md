@@ -50,6 +50,23 @@ E 开头的寄存器是32bit 的, 占4字节
 - lea dest, [地址值]
 将地址值赋值给dest, 类似于 dest = 地址值
 
+- ret 
+函数返回
+
+- xor op1, op2
+将 op1 和 op2 异或的结果赋值给op1, 类似于 op1 = op1 ^ op2;
+
+- add op1, op2
+类似于 op1 = op1 + op2;
+
+- sub op1, op2
+类似于 op1 = op1 -op2;
+
+- inc op
+类似于 op = op + 1;
+
+
+
 
 
 
