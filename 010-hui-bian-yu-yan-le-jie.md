@@ -87,6 +87,7 @@ j 开头的一般都是跳转, 大多数是带条件的跳转, 一般跟 test/ c
 <br>
 #### 四、汇编语言范例
 
+```
 int a = 1;
 mov dword ptr [ebp - 8],1 
 
@@ -97,11 +98,19 @@ int c = a + b;
 mov eax, dword ptr [ebp - 8] // 一个变量的地址值,是他最小的地址值, 内存从低到高存储
 add eax, dword ptr [ebp - 14h]
 mov dword ptr [ebp - 20h], eax
-
+```
 
 
 给函数分配的内存空间: **栈空间 ** (入栈 push/ 出栈pop)
 栈空间的特点:
+
+```
+int a = 5;
+mov dword ptr [ebp -0ch], 5
+int *p = &a;
+lea eax, [ebp - och]
+mov dword ptr [ebp - 18h], eax
+```
 
 
 
