@@ -33,7 +33,23 @@ E 开头的寄存器是32bit 的, 占4字节
 
 
 
-45:00
+<br>
+#### 三、x64汇编要点总结
+
+- mov dest, src 
+将src 的内容赋值给 dest, 类似于 dest = src
+
+- [地址值]
+中括号[ ]里面放的都是内存地址
+
+- word 是2字节, dword 是4字节(double word), qword 是 8 个字节(quad word)
+
+- call 函数地址
+调用函数
+
+- lea dest, [地址值]
+将地址值赋值给dest, 类似于 dest = 地址值
+
 
 
 
