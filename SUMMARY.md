@@ -14,4 +14,5 @@
   * [001- 引用的基本概念](008-c++-zhong-de-yin-yong/001-yin-yong-de-ji-ben-gai-nian.md)
 * [009- const](009-const.md)
 * [010- 汇编语言了解](010-hui-bian-yu-yan-le-jie.md)
+* [011- C++ 中的类](011-c++-zhong-de-lei.md)
 
