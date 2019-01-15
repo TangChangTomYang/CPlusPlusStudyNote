@@ -108,7 +108,7 @@ mov dword ptr [ebp - 20h], eax
 int a = 5;
 mov dword ptr [ebp -0ch], 5
 int *p = &a;
-lea eax, [ebp - och]
+lea eax, [ebp - och]  // lea 取出内存地址 ebp - och
 mov dword ptr [ebp - 18h], eax
 ```
 
