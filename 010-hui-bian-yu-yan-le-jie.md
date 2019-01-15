@@ -106,10 +106,15 @@ mov dword ptr [ebp - 20h], eax
 
 ```
 int a = 5;
-mov dword ptr [ebp -0ch], 5
+mov dword ptr [ebp -0ch], 5 // 将5存入[ebp -0ch]内存
 int *p = &a;
-lea eax, [ebp - och]  // lea 取出内存地址 ebp - och
-mov dword ptr [ebp - 18h], eax
+lea eax, [ebp - och]  // 将内存地址 [ebp - och
+] 存入寄存器
+mov dword ptr [ebp - 18h], eax // 将寄存器值存入内存地址
+*p = 6;
+mov eax, dword ptr [ebp -18h] // 将内存中的数据存入寄存器
+mov dword ptr [eax], 6 // 将值存入寄存器对应的内存
+
 ```
 
 
