@@ -94,7 +94,7 @@ int b = 2;
 mov dword ptr [ebp - 14h], 2
 
 int c = a + b;
-mov eax, dword ptr [ebp - 8] // 一个变量的地址值,是他最小的地址值
+mov eax, dword ptr [ebp - 8] // 一个变量的地址值,是他最小的地址值, 内存从低到高存储
 add eax, dword ptr [ebp - 14h]
 mov dword ptr [ebp - 20h], eax
 
