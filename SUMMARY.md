@@ -16,4 +16,5 @@
 * [010- 汇编语言了解](010-hui-bian-yu-yan-le-jie.md)
 * [011- C++ 中的类](011-c++-zhong-de-lei.md)
 * [012-C++ 编码规范](012-c++-bian-ma-gui-fan.md)
+* [013- C++ 中的 this 指针](013-c++-zhong-de-this-zhi-zhen.md)
 
