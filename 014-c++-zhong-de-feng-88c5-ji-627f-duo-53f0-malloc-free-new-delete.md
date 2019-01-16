@@ -126,6 +126,14 @@ void test2(){
 #### 四、 堆空间的初始化
 
 <br>
-##### 方式1:  malloc(size_t __size) 
+##### 方式1:   malloc & memset 
+使用**malloc(size_t __size)** 分配堆空间, 使用**memset(void *p, int value , size_t len)** 初始化堆空间
+
+<br>
+**API  功能说明:**
+```
+int *p = (int *)malloc(4); // 分配4字节的堆空间
+memset(p,0,4); //从p开始的4个字节堆空间,每个字节都使用 0 来初始化
+```
 
 
