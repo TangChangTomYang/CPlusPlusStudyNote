@@ -125,4 +125,7 @@ void test2(){
 <br>
 #### 四、 堆空间的初始化
 
+<br>
+##### 方式1:  malloc(size_t __size) 
+
 
