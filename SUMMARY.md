@@ -17,7 +17,6 @@
 * [011- C++ 中的类](011-c++-zhong-de-lei.md)
 * [012-C++ 编码规范](012-c++-bian-ma-gui-fan.md)
 * [013- C++ 中的 this 指针](013-c++-zhong-de-this-zhi-zhen.md)
-* [014-C++ 中的封装/继承/多台/Malloc/free/new/delete](014-c++-zhong-de-feng-88c5-ji-627f-duo-53f0-malloc-free-new-delete.md)
 * [014- C++中的封装](014-czhong-de-feng-zhuang.md)
 * [015- 程序的内存分布\(结构\)](015-cheng-xu-de-nei-cun-fen-5e0328-jie-678429.md)
 * [016-堆空间的管理 与 数据结构初始化](016dui-kong-jian-de-guan-li-yu-shu-ju-jie-gou-chu-shi-hua.md)
