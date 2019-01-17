@@ -143,5 +143,22 @@ void test2(){
 
 
 
+<br>
+#### 三、memset 函数
+
+memset 函数一将较大的数据结构(比如对象/ 数组)内存清零的比较快的方法.
+
+```
+Person  *pson;
+pson.m_id = 1;
+pson.m_age = 20
+pson.m_height = 100;
+memset(&pson,0,sizeof(pson));
+
+
+Person pson2[] = {{1,202,100},{1,202,100},{1,202,100}};
+memset(&pson2, 0 , sizeof(pson22));
+```
+
 
 
