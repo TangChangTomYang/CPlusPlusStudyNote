@@ -20,4 +20,5 @@
 * [014- C++中的封装](014-czhong-de-feng-zhuang.md)
 * [015- 程序的内存分布\(结构\)](015-cheng-xu-de-nei-cun-fen-5e0328-jie-678429.md)
 * [016-堆空间的管理 与 数据结构初始化](016dui-kong-jian-de-guan-li-yu-shu-ju-jie-gou-chu-shi-hua.md)
+* [017- C++ 中的对象 存储位置](017-c++-zhong-de-dui-xiang-cun-chu-wei-zhi.md)
 

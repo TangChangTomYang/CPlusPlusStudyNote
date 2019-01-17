@@ -162,3 +162,14 @@ memset(&pson2, 0 , sizeof(pson22));
 
 
 
+
+
+
+
+
+
+<br>
+#### 三、memset 函数
+
+
+
