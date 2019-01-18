@@ -27,6 +27,10 @@ int main (){
     person pson;
     pson.m_age = 20;
     pson.m_height = 1.88;
+    // 栈空间2
+    person pson1();
+    pson1.m_age = 20;
+    pson1.m_height = 1.88;
     
     // 堆空间
     // new Person(); 这部分返回的是一个地址,因此只能使用一个指针来存储
