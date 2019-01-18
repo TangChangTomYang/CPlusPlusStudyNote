@@ -113,6 +113,39 @@ int main (){
 ```
 
 
+<br>
+#### 四、一旦自定义了构造函数, 必须用其中一个自定义的构造函数来初始化对象
 
+```
+#include <iostream>
+using namespace std;
+
+struct Person{
+    int m_age;
+    double m_height;
+    
+    //构造函数 必须与类名相同,没有返回值  
+    Person(int age, double height){
+         m_age = age;
+         m_height = height;
+         cout << "Person(int age)" << m_age << endl;
+    }
+};
+
+
+int main (){
+    
+    // 一旦自定义了构造函数, 就必须使用自定义的构造函数初始化对象
+//    Person pson1; // 错误, 没有使用自定义构造函数初始化对象
+    
+    
+    Person pson2(19,1.75);  // 使用自定义构造函数初始化对象 ok
+    Person *pson3 = new  Person(18,1.75);
+    delete pson3;
+    
+    getchar();
+    return 0;
+}
+```
 
 
