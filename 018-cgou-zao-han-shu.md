@@ -70,4 +70,36 @@ int main (){
 <br>
 #### 三、通过malloc 分配的对象不会调用构造函数
 
+```
+#include <iostream>
+using namespace std;
+
+struct Person{
+    int m_age;
+    double m_height;
+    
+    Person(){
+        cout << "Person()" << endl;
+    }
+    
+    Person(int age, double height){
+        m_age  = age;
+        m_height = height;
+        cout << "Person(int age, double height)" << endl;
+    }
+}; 
+
+int main (){
+    // 通过 malloc 分配的对象不会调动 构造函数
+    Person *pson = (Person *)malloc(sizeof(Person));  
+    free(pson);
+    
+    getchar();
+    return 0;
+}
+```
+
+
+
+
 
