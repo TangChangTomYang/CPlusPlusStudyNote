@@ -24,7 +24,7 @@ Person g_pson;
 int main (){
     
     // 栈空间
-    person pson;
+    person pson; // 等价于person pson; 调用默认无惨的构造函数
     pson.m_age = 20;
     pson.m_height = 1.88;
     // 栈空间2
