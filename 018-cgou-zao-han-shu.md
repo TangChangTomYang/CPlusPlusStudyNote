@@ -73,7 +73,7 @@ int main (){
     return 0;
 }
 ```
-
+![](/assets/Snip20190118_3.png)
 
 
 
