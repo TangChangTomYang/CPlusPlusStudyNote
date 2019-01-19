@@ -23,4 +23,5 @@
 * [017- C++ 中的对象 存储位置](017-c++-zhong-de-dui-xiang-cun-chu-wei-zhi.md)
 * [018-C++构造函数](018-cgou-zao-han-shu.md)
 * [019-析构函数](019xi-gou-han-shu.md)
+* [020-C++ 类 声明 和 实现 分离](020-c++-lei-sheng-ming-he-shi-xian-fen-li.md)
 
