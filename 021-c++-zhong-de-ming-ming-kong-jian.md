@@ -4,7 +4,7 @@
 
 
 <br>
-#### 一 命名空间的使用情景1
+#### 一、命名空间的使用情景1
 ```
 #include <iostream>
 using namespace std;
