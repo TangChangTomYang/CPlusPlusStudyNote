@@ -22,4 +22,5 @@
 * [016-堆空间的管理 与 数据结构初始化](016dui-kong-jian-de-guan-li-yu-shu-ju-jie-gou-chu-shi-hua.md)
 * [017- C++ 中的对象 存储位置](017-c++-zhong-de-dui-xiang-cun-chu-wei-zhi.md)
 * [018-C++构造函数](018-cgou-zao-han-shu.md)
+* [019-析构函数](019xi-gou-han-shu.md)
 
