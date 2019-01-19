@@ -81,3 +81,41 @@ int main(){
 
 <br> 
 #### 方式二: .hpp 文件声明, .cpp 文件实现
+
+```
+.hpp 文件声明
+#ifndef Dog_hpp
+#define Dog_hpp
+
+
+namespace YR {
+    class Dog{
+        int m_age;
+    public:
+        Dog();
+        ~Dog();
+    };
+}
+
+#endif /* Dog_hpp */
+
+
+
+
+
+.cpp文件实现
+#include "Dog.hpp"
+#include <iostream>
+using namespace std;
+
+namespace YR {
+        Dog::Dog(){ // Dog:: 这个是用来限定 够高函数的
+            cout << "YR::Dog()" << endl;
+        }
+        Dog::~Dog(){
+            cout << "YR::~Dog()" << endl;
+        }
+
+}
+
+```
