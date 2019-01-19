@@ -30,11 +30,11 @@ public: // 以下都是类的对外接口
 /*********以下是类的实现部分*****************************************/
 // 类分离和实现分开时, 域(::)直接写在析构函数和构造函数的前面做限定即可
 Student::Student(){
-    cout << "Student :: Student()" << endl;
+    cout << "Student::Student()" << endl;
 }
 
 Student::~Student(){
-    cout << "Student :: ~Student()" << endl;
+    cout << "Student::~Student()" << endl;
 }
 
 
