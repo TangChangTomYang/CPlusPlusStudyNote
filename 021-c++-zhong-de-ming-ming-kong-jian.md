@@ -191,11 +191,11 @@ namespace aa{
 
 // .cpp 文件 类的实现
 namespace aa{
-    Person(){
+    Person::Person(){ // ::表示的是 域运算符 含义
         cout << "Person()" << endl;
     }
         
-    ~Person(){
+    Person::~Person(){ // ::表示的是 域运算符 含义
         cout << "Person()" << endl;
     }
 }
