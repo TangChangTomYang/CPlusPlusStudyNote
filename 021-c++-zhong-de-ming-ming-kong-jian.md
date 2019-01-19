@@ -19,6 +19,9 @@ int g_no; // 这个是全局变量
 class Student {
 public:
     int m_age;
+     Student(){
+        cout << "std::Student()" << endl;
+     }
 };
 
 namespace YR { // 定义一个叫 YR 的命名空间
@@ -26,6 +29,9 @@ namespace YR { // 定义一个叫 YR 的命名空间
     class Student {
     public:
         int m_height;
+        Student(){
+            cout << "YR::Student()" << endl;
+        }
     };
 }
 
