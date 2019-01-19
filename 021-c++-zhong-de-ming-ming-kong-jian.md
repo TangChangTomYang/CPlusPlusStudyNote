@@ -14,12 +14,15 @@ using namespace std;
 
 // 使用情景1:
 // 在不同的命令空间,定义相同名字的类
+
+int g_no; // 这个是全局变量
 class Student {
 public:
     int m_age;
 };
 
 namespace YR { // 定义一个叫 YR 的命名空间
+    int g_no; // 这个是全局变量 (是YR命名空间的全局变量)
     class Student {
     public:
         int m_height;
