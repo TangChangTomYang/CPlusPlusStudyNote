@@ -5,7 +5,8 @@
 
 
 <br>
-#### 一、 类 声明和实现分离,方式一: 域 (比如: Student::) 做限定
+#### 类 声明和实现分离,方式一:
+声明实现写在同一文件内, 使用 域 (比如: Student::) 做限定
 ```
 /*********以下是类的声明部分*****************************************/
 class Student{ // 声明一个类
@@ -53,4 +54,30 @@ double Student::height(){
 void Student::setHeight(double height){
     this -> m_height = height;
 }
+
+
+// 外面访问
+int main(){
+    Student *stu = new Student();
+    stu -> setAge(18);
+    stu -> setHeight(2.2);
+    
+    cout << "age =" << stu -> age() << "height =" << stu -> height() << endl;
+    
+    delete stu;
+
+    return 0;
+}
 ```
+
+
+
+
+
+
+
+
+
+
+<br> 
+#### 方式二: .hpp 文件声明, .cpp 文件实现
