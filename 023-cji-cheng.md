@@ -72,7 +72,7 @@ struct Person{
 public: // 这个就是成员本身的访问权限
     int m_age;
 protected:// 这个就是成员本身的访问权限
-    double m_heihgt;
+    double m_height;
 private: // 这个就是成员本身的访问权限
     int m_sex;
 };
