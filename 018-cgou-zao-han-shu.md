@@ -49,12 +49,12 @@ struct Person{
 };
 
 // 全局区 对象, 自动调用
-Person g_pson; // 全局区的对象,会调用默认的构造函数, 等价于g_pson();
+Person g_pson; // 全局区的对象,会调用默认的构造函数, 千万不要写成 'Person g_pson()',  'Person g_pson()' 是函数声明而不是全局对象;
 Person g_pson2(18,1.67); // 全局区的对象,会调用有参的构造函数
 int main (){
 
     // 栈空间 对象 自动调用
-    Person pson; // 等价于pson();
+    Person pson; // 千万不要写成功'Person pson()`,'Person pson()` 是函数声明 ;
     pson.m_age = 20;
     pson.m_height = 1.88;
     
@@ -74,6 +74,11 @@ int main (){
     return 0;
 }
 ```
+
+
+#### 下面是一个经典的案例:
+
+写在全局区和栈区对象时,要谨慎, 不要写成函数声明了
 ![](/assets/Snip20190118_3.png)
 
 
