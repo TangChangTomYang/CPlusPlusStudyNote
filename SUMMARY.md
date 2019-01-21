@@ -27,4 +27,5 @@
 * [021-C++ 中的命名空间](021-c++-zhong-de-ming-ming-kong-jian.md)
 * [022-域运算符 和 命名空间](022yu-yun-suan-fu-he-ming-ming-kong-jian.md)
 * [023- C++继承](023-cji-cheng.md)
+* [024-初始化列表](024chu-shi-hua-lie-biao.md)
 
