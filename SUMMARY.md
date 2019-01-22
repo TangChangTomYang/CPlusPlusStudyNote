@@ -28,4 +28,5 @@
 * [022-域运算符 和 命名空间](022yu-yun-suan-fu-he-ming-ming-kong-jian.md)
 * [023- C++继承](023-cji-cheng.md)
 * [024-初始化列表](024chu-shi-hua-lie-biao.md)
+* [025-构造函数的相互调用](025gou-zao-han-shu-de-xiang-hu-diao-yong.md)
 
