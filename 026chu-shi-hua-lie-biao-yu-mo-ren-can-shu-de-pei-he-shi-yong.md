@@ -2,7 +2,7 @@
 
 
 <br>
-#### 一 构造函数初始化列表+默认参数, 可以达到函数重载的效果**
+#### 一、 构造函数初始化列表+默认参数, 可以达到函数重载的效果
 
 如下:
 ```
@@ -33,5 +33,30 @@ int main() {
 
 
 
+<br>
+#### 二、构造函数的声明和实现分开情况
 
-#### 构造函数的声明和实现分开情况
+1、初识化列表只能写在函数的实现中.
+2、默认参数只能写在函数的声明中.
+
+```
+.hpp 文件声明
+namespace YR  {
+    class Student{
+        int m_age;
+        double m_height;
+    public:
+        Student(int age = 10, double height = 1.88); // 默认参数只能写在函数的声明
+        
+    };
+}
+
+
+.cpp 文件实现
+namespace YR  {
+    // 初始化列表只能写在函数的实现部分
+    Student::Student(int age , double height ) : m_age(age), m_height(height){
+        
+    }
+}
+```
