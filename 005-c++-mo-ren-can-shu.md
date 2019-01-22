@@ -22,3 +22,29 @@
 
  
  
+ 
+ 
+ <br>
+ **2、函数的声明和实现分离的话, 默认参数只能写在声明里面
+**
+
+```
+//函数的声明
+namespace YR {
+    class Car{
+        int m_price;
+    public:
+        //声明和实现分离的化, 默认参数只能写在函数的声明部分
+        void setPrice(int  price = 200);
+    };
+}
+
+
+// 函数的实现
+namespace YR {
+    void Car::setPrice(int  price ){
+        this -> m_price = price;
+    }
+}
+
+```
