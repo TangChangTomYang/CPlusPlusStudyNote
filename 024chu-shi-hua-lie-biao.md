@@ -73,4 +73,23 @@ struct Person{
 
 
 
+<br>
+**4、初识化列表只能写在函数的实现部分**
+
+```
+// 声明部分
+struct Dog{
+    int m_age;
+    Dog(int age );
+}
+
+// 实现部分
+Dog::Dog(int age) : m_age(age){ // 初始化列表只能写在函数的实现
+    
+}
+
+```
+
+
+
 
