@@ -166,3 +166,37 @@ int main (){
 
 也就是说: 只要自定义了构造函数,那么除了全局区的对象,其它区的对象都需要程序员自己初始化.xs
 
+
+
+
+
+
+
+<br>
+#### 六、如果父类只有 有参的构造函数,那么子类必须在 自己的构造函数的初始化列表显示调用父类的有参构造函数
+```
+class Animal {
+    int m_sex;
+public:
+    
+    Animal(int sex) : m_sex(sex){
+        cout << "Animal(int sex) : m_sex(sex)" << endl;
+    }
+};
+
+class Dog : public Animal{
+    int m_age;
+public:
+    Dog():Animal(0){ // 必须显示调用父类有参构造函数
+        
+    }
+    Dog(int age): m_age(age), Animal(0){// 必须显示调用父类有参构造函数
+        
+    }
+   
+};
+```
+
+
+
+
