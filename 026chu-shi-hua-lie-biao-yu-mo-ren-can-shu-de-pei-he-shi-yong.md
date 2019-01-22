@@ -46,7 +46,8 @@ namespace YR  {
         int m_age;
         double m_height;
     public:
-        Student(int age = 10, double height = 1.88); // 默认参数只能写在函数的声明
+        // 默认参数只能写在函数的声明]
+        Student(int age = 10, double height = 1.88); 
         
     };
 }
