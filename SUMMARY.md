@@ -29,4 +29,5 @@
 * [023- C++继承](023-cji-cheng.md)
 * [024-初始化列表](024chu-shi-hua-lie-biao.md)
 * [025-构造函数的相互调用](025gou-zao-han-shu-de-xiang-hu-diao-yong.md)
+* [026-初始化列表与默认参数的配合使用](026chu-shi-hua-lie-biao-yu-mo-ren-can-shu-de-pei-he-shi-yong.md)
 
