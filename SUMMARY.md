@@ -31,4 +31,5 @@
 * [025-构造函数的相互调用](025gou-zao-han-shu-de-xiang-hu-diao-yong.md)
 * [026-初始化列表与默认参数的配合使用](026chu-shi-hua-lie-biao-yu-mo-ren-can-shu-de-pei-he-shi-yong.md)
 * [027- 父类的构造函数](027-fu-lei-de-gou-zao-han-shu.md)
+* [028- 构造 和 析构的顺序](028-gou-zao-he-xi-gou-de-shun-xu.md)
 
