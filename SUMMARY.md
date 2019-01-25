@@ -32,4 +32,6 @@
 * [026-初始化列表与默认参数的配合使用](026chu-shi-hua-lie-biao-yu-mo-ren-can-shu-de-pei-he-shi-yong.md)
 * [027- 父类的构造函数](027-fu-lei-de-gou-zao-han-shu.md)
 * [028- 构造 和 析构的顺序](028-gou-zao-he-xi-gou-de-shun-xu.md)
+* [029-父类指针  子类指针](029fu-lei-zhi-zhen-zi-lei-zhi-zhen.md)
+* [029- 面向对象的3大特性](029-mian-xiang-dui-xiang-de-3-da-te-xing.md)
 
