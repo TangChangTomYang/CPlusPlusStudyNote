@@ -34,4 +34,5 @@
 * [028- 构造 和 析构的顺序](028-gou-zao-he-xi-gou-de-shun-xu.md)
 * [029-父类指针  子类指针](029fu-lei-zhi-zhen-zi-lei-zhi-zhen.md)
 * [029- 面向对象的3大特性](029-mian-xiang-dui-xiang-de-3-da-te-xing.md)
+* [030- 虚表](030-xu-biao.md)
 
