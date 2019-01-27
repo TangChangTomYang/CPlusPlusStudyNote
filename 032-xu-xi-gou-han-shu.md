@@ -7,21 +7,22 @@
 
 
 ```
-#include <isstream>
-using namespace std;
+
+#include <iostream>
+using namespace  std;
 
 class Person{
     int m_age;
 public:
-    // 定义函数为虚函数
     virtual void run(){
         cout << "void Person::run()" << endl;
     }
     
-    ☆☆☆☆
-    // 定义了虚函数的类, 必须将析构函数也定义为虚析构函数
-    virtual ~Person(){
-        cout << "Person::~Person()" << endl;
+    Person(){
+        cout << "Person::Person()" << endl;
+    }
+    ~Person(){
+        cout << "~Person::Person()" << endl;
     }
 };
 
@@ -31,9 +32,62 @@ public:
     void run(){
         cout << "void Student::run()" << endl;
     }
-    
-    ~Student(){
-        cout << "Student::~Student()" << endl;
+    Student(){
+        cout << "Student::Student()" << endl;
     }
+    virtual ~Student(){
+        cout << "~Student::Student()" << endl;
+    }
+};
+
+
+class GoodStudent : public Student{
+    int m_no;
+public:
+    void run(){
+        cout << "void Student::run()" << endl;
+    }
+    GoodStudent(){
+        cout << "GoodStudent::GoodStudent()" << endl;
+    }
+    ~GoodStudent(){
+        cout << "~GoodStudent::GoodStudent()" << endl;
+    }
+};
+
+int main( ) {
+    
+//    Person *pson = new Student();
+//    pson-> run();
+//    delete  pson;
+    /** 打印结果:
+     Person::Person()
+     Student::Student()
+     
+     void Student::run()
+     
+     ~Person::Person()
+
+     1> 可以发现 析构的流程是正确的, run 方法也是调用的Student 的方法是正确的
+     2> 但是析构函数是错误的, 没有调用Student的析构, 只是调用了 Person的析构, 这时因为没有把析构函数定义为 虚析构函数, 非析构函数的调用 只与调用方法当时的指针类型有关系, 和指向的对象的真实类型无关
+     */
+    
+    Student *stu = new GoodStudent();
+    stu -> run();
+    delete  stu;
+    /** 打印结果:
+     Person::Person()
+     Student::Student()
+     GoodStudent::GoodStudent()
+     void Student::run()
+     // 虚析构函数, ok
+     ~GoodStudent::GoodStudent()
+     ~Student::Student()
+     ~Person::Person()
+     */
+    
+    
+    getchar();
+    return 0;
 }
 ```
