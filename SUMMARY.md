@@ -35,4 +35,5 @@
 * [029-父类指针  子类指针](029fu-lei-zhi-zhen-zi-lei-zhi-zhen.md)
 * [029- 面向对象的3大特性](029-mian-xiang-dui-xiang-de-3-da-te-xing.md)
 * [030- 虚表](030-xu-biao.md)
+* [031- 虚 析构函数](031-xu-xi-gou-han-shu.md)
 
