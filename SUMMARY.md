@@ -38,4 +38,6 @@
 * [031- C++中子类调用父类的方法](031-czhong-zi-lei-diao-yong-fu-lei-de-fang-fa.md)
 * [032- 虚 析构函数](032-xu-xi-gou-han-shu.md)
 * [033-纯虚函数](033chun-xu-han-shu.md)
+* 034- C++ 多继承
+* [033- 纯虚函数 和 抽象类](033-chun-xu-han-shu-he-chou-xiang-lei.md)
 
