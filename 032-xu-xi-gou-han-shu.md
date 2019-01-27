@@ -18,6 +18,7 @@ public:
         cout << "void Person::run()" << endl;
     }
     
+    ☆☆☆☆
     // 定义了虚函数的类, 必须将析构函数也定义为虚析构函数
     virtual ~Person(){
         cout << "Person::~Person()" << endl;
