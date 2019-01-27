@@ -36,4 +36,5 @@
 * [029- 面向对象的3大特性](029-mian-xiang-dui-xiang-de-3-da-te-xing.md)
 * [030- 虚表](030-xu-biao.md)
 * [031- 虚 析构函数](031-xu-xi-gou-han-shu.md)
+* [031- C++中子类调用父类的方法](031-czhong-zi-lei-diao-yong-fu-lei-de-fang-fa.md)
 
