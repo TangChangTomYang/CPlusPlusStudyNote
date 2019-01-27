@@ -42,8 +42,11 @@ public:
 ```
 class Person{ // 抽象类, 不可实例化
 public:
-    virtul void run()=0; // 纯虚函数, 用作定义接口
-    virtul void speak()=0; // 纯虚函数, 用作定义接口
+    virtual void run()=0; // 纯虚函数, 用作定义接口
+    virtual void speak()=0; // 纯虚函数, 用作定义接口
+    void doWork(){
+        cout << "抽象类, 也可以有,非纯虚函数" << endl;
+    }
 };
 
 class Student : public Person{ // 依然是抽象类
