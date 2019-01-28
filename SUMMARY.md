@@ -39,4 +39,5 @@
 * [032- 虚 析构函数](032-xu-xi-gou-han-shu.md)
 * [033- 纯虚函数 和 抽象类](033-chun-xu-han-shu-he-chou-xiang-lei.md)
 * [034- C++ 多继承](034-c++-duo-ji-cheng.md)
+* [035- 同名函数](035-tong-ming-han-shu.md)
 
