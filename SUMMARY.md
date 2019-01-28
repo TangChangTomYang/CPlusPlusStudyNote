@@ -40,4 +40,5 @@
 * [033- 纯虚函数 和 抽象类](033-chun-xu-han-shu-he-chou-xiang-lei.md)
 * [034- C++ 多继承](034-c++-duo-ji-cheng.md)
 * [035- 同名函数](035-tong-ming-han-shu.md)
+* [036-同名成员变量](036tong-ming-cheng-yuan-bian-liang.md)
 
