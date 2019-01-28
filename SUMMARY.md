@@ -41,4 +41,5 @@
 * [034- C++ 多继承](034-c++-duo-ji-cheng.md)
 * [035- 同名函数](035-tong-ming-han-shu.md)
 * [036-同名成员变量](036tong-ming-cheng-yuan-bian-liang.md)
+* [037- 菱形继承](037-ling-xing-ji-cheng.md)
 
