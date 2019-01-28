@@ -3,7 +3,7 @@
 C++  允许一个类可以有多个父类(不建议使用, 会增加程序设计复杂度),如下:
 
 
-#### 一
+#### 一、 C++ 中的多继承示例
 ```
 #include <iostream>
 using namespace std;
