@@ -246,3 +246,11 @@ int main( ) {
 ```
 
 
+
+#### 三 、 C++ 和 C 语言中防止野指针
+```
+int *p = new int();
+
+delete p;
+p = NULL ;
+```
