@@ -122,17 +122,57 @@ int main( ) {
 3、静态方法内部没有this 指针这一说法.
 4、由于静态成员变量是存储在 数据段(全局区),不是存储在某个对象里面的, 因此静态成员变量不占具体对象的内存,如下:
 
+案例1:
 ```
 //静态成员变量不占对象内存
 //C++ 中最小的类, 占用一个字节
 
 class Person{
-    int ms_age;
+   static int ms_age;
 };
+
+int Person::ms_age = 0; //静态成员变量初始化
 
 cout << sizeof(Person) << endl; // 结果 1字节
 ```
 
+<br>
+案例2:
+
+```
+
+#include <iostream>
+using namespace std;
+
+
+class Person {
+public:
+    static int ms_age;
+};
+
+int  Person::ms_age = 0;
+class Student : public Person{
+    
+};
+
+
+int main( ) {
+  
+    cout << Person::ms_age << endl; //0
+    
+    Person pson;
+    pson.ms_age = 10;
+    cout << pson.ms_age << endl; //10
+    
+    Student stu;
+    stu.ms_age = 20;
+    cout << stu.ms_age << endl; // 20
+    
+    getchar();
+    return 0;
+}
+
+```
 
 
 
