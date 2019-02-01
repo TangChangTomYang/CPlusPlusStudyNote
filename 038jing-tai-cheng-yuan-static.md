@@ -20,7 +20,7 @@ using namespace std;
 class Car{
 
 public:  // 静态成员可以使用 public/ protected/ privated 修饰访问权限
-    static int m_price; // 静态成员变量
+    static int ms_price; // 静态成员变量
     int m_wheelCout; // 非静态成员变量
     
 public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
@@ -35,7 +35,7 @@ public: // 静态成员可以使用 public/ protected/ privated 修饰访问权�
 };
 
 // 必须在类外面初始化,静态成员变量
-int  Car::m_price = 20;
+int  Car::ms_price = 20;
 
 int g_age; // 全局变量, 编译器默认会在前面添加 static  修饰, 相当于 static int g_age;
 void test(){ // 全局函数,编译器默认会在前面添加 static  修饰
@@ -46,22 +46,22 @@ void test(){ // 全局函数,编译器默认会在前面添加 static  修饰
 int main( ) {
     //1. 通过对象访问 静态成员变量
     Car car1;
-    car1.m_price = 30;
-    cout << "car1.m_price: " <<  car1.m_price << endl;
+    car1.ms_price = 30;
+    cout << "car1.ms_price: " <<  car1.ms_price << endl;
     
     //2. 通过对象指针,访问静态成员
     Car *car2 = new Car();
-    car2->m_price = 40;
-    cout << "car2->m_price: " <<  car2->m_price << endl;
+    car2->ms_price = 40;
+    cout << "car2->ms_price: " <<  car2->ms_price << endl;
     
     //3. 通过类名访问 静态成员变量
-    Car::m_price = 50;
-    cout << "Car::m_price: " <<  Car::m_price << endl;
+    Car::ms_price = 50;
+    cout << "Car::ms_price: " <<  Car::ms_price << endl;
     
     /** 打印结果
-     car1.m_price: 30
-     car2->m_price: 40
-     Car::m_price: 50
+     car1.ms_price: 30
+     car2->ms_price: 40
+     Car::ms_price: 50
      */
     
     getchar();
