@@ -21,3 +21,9 @@
 - 非const 对象(指针)优先调用非const成员函数
 - const对象(指针)只能调用const成员函数、static 成员函数
 
+
+<br>
+**4、const函数 和 非const函数 构成函数重载**
+- 当const函数和非const函数构成重载后, 非const对象 优先调用非const 函数. const 对象优先调用const函数
+
+
