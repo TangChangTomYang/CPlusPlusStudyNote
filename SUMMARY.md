@@ -46,4 +46,5 @@
 * [039-const 成员](039-const-cheng-yuan.md)
 * [040-引用类型的成员](040yin-yong-lei-xing-de-cheng-yuan.md)
 * [041-拷贝构造函数](041kao-bei-gou-zao-han-shu.md)
+  * [001-字符串常识](041kao-bei-gou-zao-han-shu/001zi-fu-chuan-chang-shi.md)
 
