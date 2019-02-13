@@ -75,3 +75,31 @@ public:
 };   
 
  ``` 
+ 
+ 
+ 
+ 
+ <br>
+#### 三、 只有基本数据类型成员变量的拷贝构造函数可以不用写(使用系统默认的即可)
+
+```
+class Person{
+    int m_age;
+public:
+    Person(int age): m_age(age){
+        cout << "普通构造函数 Person(int age)"<< endl;
+    }
+    
+    // 只有基本数据类型的成员变量, 系统实现的拷贝构造函数,就是下面这样,值拷贝(浅拷贝) 没有堆空间的分配, 可以不写
+    Person(const Person *pson): m_age(pson.m_age){
+        cout << "拷贝构造函数 Person(const Person *pson)" << endl;
+    }
+    
+    
+    ~Person(){
+        cout << "析构函数" << endl
+    }
+}
+
+
+
