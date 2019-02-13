@@ -59,12 +59,12 @@ class Student : public Person{
     int m_score;
 public:
     
-    // 子类构造函数
+    // 子类构造函数, 只能在初始化列表调用父类构造函数
     Student(int age , int score): Person(age), m_score(score){
         cout << "子类构造函数调用父类构造函数" << endl;
     }
     
-    // 子类 拷贝构造函数, 有且仅接收一个const 的引用
+    // 子类 拷贝构造函数, 有且仅接收一个const 的引用, 子类拷贝构造函数只能在初始化列表调用父类的拷贝构造函数
     Student (const Student &stu) : Person(stu) , m_score(stu.m_score){
         cout << "子类的 拷贝构造函数, 自能在初始化列表中调用父类的拷贝构造函数" << end了;
     }
