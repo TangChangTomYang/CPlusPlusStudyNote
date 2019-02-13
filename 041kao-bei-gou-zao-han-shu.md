@@ -6,7 +6,7 @@
 <br>
 #### 一、构造函数的常识
 - 一般来说, 构造函数被调用了,就会有新的对象创建
-- 在C++ 中, 有2种构造函数, 普通构造函数和拷贝构造函数
+- 在C++ 中, 有2种构造函数, **普通构造函数和拷贝构造函数**
 
 ```
 class Person{
@@ -18,7 +18,7 @@ public:
         cout << "普通构造函数" << endl;
     }
     
-    // 拷贝构造函数
+    // 拷贝构造函数 (拷贝构造函数有且接收一个 const 类型的引用)
     Person(const Person &pson) : m_age(pson.m_age), m_price(pson.m_price){
         cout << "拷贝构造函数" << endl;
     }
