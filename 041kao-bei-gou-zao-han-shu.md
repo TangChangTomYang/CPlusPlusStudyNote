@@ -207,3 +207,79 @@ public:
 
 
 
+
+<br>
+#### 六、 C++ 中的对象拷贝
+
+**1、拷贝构造函数 (copy Constructor)**
+-  拷贝构造函数是构造函数的一种
+-  当利用已存在的对象,创建一个新的对象时(类似于拷贝), 就会调用新对象的拷贝构造函数进行初始化
+-  拷贝构造函数的格式是固定的, 接收一个 const 引用作为参数
+
+
+
+
+**2 C++对象拷贝示例**
+```
+class Car{
+    int m_price;
+public:
+    // 构造函数
+    Car(int price = 0) : m_price(price){
+        
+        cout << "Car(int price = 0) " << endl;
+    }
+    
+    //拷贝构造函数, 接收一个 const 引用
+//    Car(const Car &car){
+//        cout << "Car(const Car &car)" << endl;
+//        this->m_price = car.m_price;
+//    }
+//    拷贝构造函数也可以这样写, 和构造函数一样, 也是可以有初始化列表的
+    Car(const Car &car):m_price(car.m_price){ // 其实像这种只包含基本数据类型的拷贝构造函数完全可以不写(默认系统也是这样实现的)
+        cout << "Car(const Car &car)" << endl;
+    }
+    
+    
+    void display(){
+        cout << "price:" << this -> m_price << endl;
+        cout << "address: " << this << endl;
+    }
+};
+
+
+void testCopyCar(){
+    // 利用构造函数创建对象
+    Car zCar1(20) ; // 栈对象
+    zCar1.display();
+    Car *dCar1 = new Car(10); // 堆对象
+    dCar1->display();
+    cout << endl;
+    
+    Car zcCar1 = Car(zCar1); // 栈拷贝
+    zcCar1.display();
+    Car *dcCar1 = new  Car(zCar1); // 堆拷贝
+    dcCar1->display();
+    cout << endl;
+    
+    Car zcCar11 = zCar1; // 栈拷贝 等价于  Car zcCar11 = Car(zCar1);
+    zcCar11.display();
+    
+    // 注意下面这种写法不是拷贝, 是赋值
+    Car zCar50(50);
+    cout << "---zCar50----" << &zCar50 << endl;
+    Car zcCar50;
+    cout << "---zcCar50----" << &zcCar50 << endl;
+    // 注意, 这里不是拷贝操作是赋值操作,是将zCar50 的空间赋值给zcCar50
+    // 拷贝是利用一个已经存在的对象产生一个新对象, 而赋值不会产生新对象
+    zcCar50 = zCar50;
+    cout << "---zcCar50----" << &zcCar50 << endl;
+    cout << endl;
+    
+    Car zcCar2 = Car(*dCar1); // 栈拷贝
+    zcCar2.display();
+    Car *dcCar2 = new Car(*dCar1); // 堆拷贝
+    dcCar2->display();
+}
+
+```
