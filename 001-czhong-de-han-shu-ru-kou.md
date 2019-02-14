@@ -11,3 +11,4 @@ java中可以有多个mian函数,而且也是把mian 函数作为程序的入口
 
 ![](/assets/Snip20190110_2.png)
 
+ 
