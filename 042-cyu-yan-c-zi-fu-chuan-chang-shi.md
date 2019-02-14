@@ -20,6 +20,7 @@ printf("cppName: %s",cppName);
 <br>
 #### 二、C++ 中 和 C语言中接收字符串指针的函数参数的设置
 
+C++ 中 const 参数,可以接收const 和 非 const 实参
 ```
 char *name = "zhangsan";
 char address[] = {'C','D','\0'};
