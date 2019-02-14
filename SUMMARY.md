@@ -47,4 +47,5 @@
 * [040-引用类型的成员](040yin-yong-lei-xing-de-cheng-yuan.md)
 * [041-拷贝构造函数](041kao-bei-gou-zao-han-shu.md)
 * [042-C语言C++字符串常识](042-cyu-yan-c-zi-fu-chuan-chang-shi.md)
+* [043- 对象类型参数和返回值](043-dui-xiang-lei-xing-can-shu-he-fan-hui-zhi.md)
 
