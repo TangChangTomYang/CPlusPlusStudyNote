@@ -69,3 +69,6 @@ int main() {
 测试 &car
 析构 ~Car Address: 0x7ffeefbff4e0
 ```
+
+
+**3 对象作为函数的返回值, 产生中间对象**
