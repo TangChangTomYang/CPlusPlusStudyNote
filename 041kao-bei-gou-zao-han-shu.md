@@ -105,11 +105,44 @@ public:
 
 
 <br>
-#### 四、 有指针类型的成员变量, 拷贝构造函数需要重写
+#### 四、C++ / C语言中字符串 拷贝存在的意义 (野指针)
 
-- 有指针类型的成员变量,在指针赋值时 需要申请堆空间来存储指针指向的内容,防止指针指向的内容存储在栈空间消失了, 不安全
+```
+class Car {
+    int m_price;
+    const char *m_name;
+public:
+    
+    // 这个构造函数, 貌似没有问题, 其实问题大了去了
+    Car (int price,const char *name ) : m_price(price),m_name(name) {
+        
+    }
+    
+    void display(){
+        cout << "price:" <<  m_price << "\n" << "name: " << m_name << endl;
+    }
+};
 
+int main() {
+    
+    char name[] = {'b','m','w','\0'};
+    
+    Car *myCar = new Car(100, name);
+    myCar->display();
+    // 这个代码从语法角度 和 运行情况来看,貌似没有问题, 其实问题大了去了
+    // 主要问题如下:
+    // 1> name 指向的是一个栈空间的字符数组(字符串), 一旦函数或作用于结束,栈空间自动回收
+    // 2> myCar 指向的是一个堆空间, 堆空间不会自动回收, 需要程序员手动回收
+    // 3> 堆空间的对象myCar 的成员变量m_name指向的是一个栈空间
+    // 4> 后果栈空间(name)先释放, 堆空间(myCar)后释,  通过堆空间(myCar)的成员变量去访问已经释放的栈空间容易造成野指针
+    getchar();
+    return 0;
+}
 
+```
+图解如下
+
+![](/assets/Snip20190214_1.png)
   
 
 
