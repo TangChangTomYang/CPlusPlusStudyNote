@@ -162,6 +162,48 @@ Car *myCar(){
 <br>
 #### 五、C++ / C语言中字符串 的正确用法
 
+```
+class Che{
+    int m_price;
+    char *m_name;
+public:
+    // 构造函数
+    Che(int price , const char *name = NULL ) : m_price(price){
+
+        if (name == NULL )  return;
+        // 申请堆空间存储字符串
+        this-> m_name = new char[strlen(name) + 1]{}; // {}的作用是初始化为 全0
+        // 拷贝字符串内容
+        strcpy(this-> m_name, name); // char *__dst 表示的是目标字符串,const char *__src 表示的是源字符串
+        
+        cout << " Che(int price , const char *name = NULL )" << endl;
+    }
+    
+    // 拷贝构造函数
+    Che(const Che &che):m_price(che.m_price){
+        
+        // 拷贝字符串
+        if (che.m_name != NULL) {
+            // 申请堆空间存储字符串
+            this->m_name = new char[strlen(che.m_name) + 1]{}; //  {} 的作用是初始化为 0
+            strcpy(this->m_name, che.m_name);
+        }
+    }
+    
+    // 析构函数
+    ~Che(){
+        
+        // 释放堆空间, 要写严谨点
+        if(this->m_name != NULL) {
+            delete[] m_name; // 因为 new 的时候 char[] 有[], delete 时也要带[]
+            m_name = NULL; // 清空指针, 方式释放后再次使用造成野指针
+        }
+        
+        cout << "~Che()" << endl;
+    }
+};
+```
+
 
 
 
