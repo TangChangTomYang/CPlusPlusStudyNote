@@ -144,6 +144,16 @@ int main() {
 
 ![](/assets/Snip20190214_1.png)
 
-  
+比如这样就很危险了
+```
+
+Car *myCar(){
+    char name[] = {'b','m','w','\0'};
+    
+    Car *myCar = new Car(100, name);
+    return  myCar; // 当其他地方使用myCar就很危险了name已经回收了
+}
+
+```
 
 
