@@ -45,8 +45,11 @@ Person p = 20; // 不再被允许, 因为有explicit 修饰
 
 **4、 关于单参数函数的说明**
 ```
-以下2个函数都可以成为单参数函数
+以下3个函数都可以 看成单参数函数
+void display(int age = 0 , int price = 0) ; 
 void display(int age , int price = 0) ; 
 void display(int age) ; 
 ```
+结论:
+只要可以传一个参数调用的函数,都可以看做单参数函数
 
