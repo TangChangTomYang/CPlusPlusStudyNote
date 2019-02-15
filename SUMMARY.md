@@ -50,4 +50,5 @@
 * [043- 对象类型参数和返回值](043-dui-xiang-lei-xing-can-shu-he-fan-hui-zhi.md)
 * [044- 匿名对象](044-ni-ming-dui-xiang.md)
 * [045-隐式构造](045yin-shi-gou-zao.md)
+* [046-默认构造函数](046mo-ren-gou-zao-han-shu.md)
 
