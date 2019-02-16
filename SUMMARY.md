@@ -51,4 +51,5 @@
 * [044- 匿名对象](044-ni-ming-dui-xiang.md)
 * [045-隐式构造](045yin-shi-gou-zao.md)
 * [046-默认构造函数](046mo-ren-gou-zao-han-shu.md)
+* [047- 友元](047-you-yuan.md)
 
