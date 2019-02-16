@@ -38,3 +38,42 @@ public:
         
     };
     ```
+    
+- **4> 包含了对象类型(非指针类型)的成员, 且这个成员有构造函数**
+    ```
+    class Dog { // 编译器不会为Dog类生成无参的构造函数
+        int m_age;
+    };
+    
+    class Girl : public Dog{ // 编译器不会为Girl类生成无参的构造函数, 因为Dog 无构造函数
+        Dog dog;
+    };
+    
+    //
+    class Car{ // 编译器会为Car类, 自动生成无参的构造函数
+        int m_price;
+    public:
+        virtual void run(){ //虚函数(多态)
+            
+        }
+    };
+    
+    class Worker{ // 编译器会自动为Worker自动生成无参的构造函数, 因为有对象类型成员car,且car有构造函数
+        Car car;
+    };
+    ```
+    
+- **5> 父类有构造函数(不论是系统自动生成的还是,手动写的)**
+    ```
+    class Person {
+        int m_age;
+    public:
+        Person(){
+        }
+    };
+    
+    class Student : public Person{ // 编译器会自动为Student 生成无参构造函数, 因为父类Person 有构造函数
+        int m_score;
+    }
+    ```
+    
