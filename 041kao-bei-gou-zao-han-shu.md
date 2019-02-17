@@ -219,7 +219,7 @@ public:
 
 
 
-**2 C++对象拷贝示例**
+**2、 C++对象拷贝示例**
 ```
 class Car{
     int m_price;
