@@ -53,4 +53,5 @@
 * [046-默认构造函数](046mo-ren-gou-zao-han-shu.md)
 * [047- 友元](047-you-yuan.md)
 * [048-内部类](048nei-bu-lei.md)
+* [049-局部类](049ju-bu-lei.md)
 
