@@ -47,8 +47,49 @@
 <br>
 ####  二、 引用的价值
 
-**1、函数的返回值可以被赋值**
+**1、引用作为函数的返回值时可以被赋值(主要应哟经情景: 运算符重载)**
 ![](/assets/Snip20190113_5.png)
+
+在 **++a** 运算符重载时,会用到 引用作为函数的返回值可以被赋值的特性
+
+```
+class Point{
+    int m_x;
+    int m_y;
+public:
+    Point(int x, int y):m_x(x), m_y(y){
+        
+    }
+    
+    void display(){
+        cout << "(x= " << this->m_x << ", y= " << this->m_y << ")" << endl;
+    }
+    
+    // 运算符 重载 ++a
+    Point &operator++(){
+        this->m_x += 1;
+        this->m_y += 1;
+        return *this; // 这里返回引用有2个特点(1> 引用作为返回值可以被赋值 . 2> 函数返回对象类型可能产生临时中间对象,返回引用避免了中间对象的产生)
+    }
+    
+     // 这里是 a+b 中的 + 号重载
+    Point operator+(Point p){
+        this->m_x += p.m_x;
+        this->m_y += p.m_y;
+        return  Point(this->m_x, this->m_y);
+        
+    }
+    
+};
+
+int main( ) {
+   
+    Point p(10,20);
+    p.display();
+    
+    (++p).display();
+}
+```
 
 **2、交换2个整数的值更简单**
 ![](/assets/Snip20190113_4.png)
@@ -60,11 +101,13 @@
 
 
 <br>
-####  三、 引用不能指向常亮, 但是常引用可以指向常亮
+####  三、常引用的特性
+
+**1、引用不能指向常量(只能指向变量), 但是常引用可以指向常量**
+
 
 ```
 int &rAge = 10; // 错误写法, 引用不能指向常亮
-
 int const &rAge1 = 20; // 常引用可以指向常亮
 ```
 
