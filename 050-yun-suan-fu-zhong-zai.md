@@ -12,6 +12,8 @@
 
 ```
 class Point{
+    friend Point operator+(const Point &p1, const Point &p2); // p + p
+    friend ostream &operator<<(ostream &cout, const Point p); // cout << p;
     int m_x;
     int m_y;
 public:
@@ -51,11 +53,27 @@ public:
     } 
     
     // 重载 'p++' 号 运算符
-    void  operator++(int ){ // int 是语法糖固定写法
+    Point  operator++(int ){ // int 是语法糖固定写法
+        Point p(this->m_x,this->m_y);
         this->m_x += 1;
         this->m_y += 1;
-        
+        return p;
     }
     
 };
+
+// Point p = p1 + p2; 我们要实现 '+' 号的运算符重载
+Point operator+(const Point &p1, const Point &p2){ // 为了便于操作, 我们将这个方法定义为 Point 的友元函数
+    
+   return  Point(p1.m_x + p2.m_x, p1.m_y + p2.m_y); // 返回匿名对象, 避免中间对象的产生
+}
+
+
+/** 重载 << 打印point
+ cout 是 ostream 类型的一个对象
+ */
+ostream &operator<<(ostream &cout, const Point p){ // 将这个重载运算符函数定义为Point的友元函数
+   return  cout <<"(x = " << p.m_x << ",y = " << p.m_y << ")" << endl;
+}
+
 ```
