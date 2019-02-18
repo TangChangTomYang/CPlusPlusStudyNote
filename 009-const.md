@@ -85,11 +85,21 @@ double const &rAge2 = age ; // 常引用可以存储不同的数据类型的值
 ![](/assets/Snip20190113_12.png)
 
 
+
+<br>
 **6、const 的引用作为函数参数可以和非const 的引用作为参数 构成重载, 此规则也使用与指针**
  ![](/assets/Snip20190113_13.png)
  
+ 
+ <br>
  **7、当字符串作为函数参数时, 最好定义为 const char * 类型, 这样 兼容性好**
 ![](/assets/Snip20190218_2.png)
+
+
+
+<br>
+**☆☆☆☆☆8、const 对象/ const 引用 不能调用非const 函数**
+
 
 <br>
 
