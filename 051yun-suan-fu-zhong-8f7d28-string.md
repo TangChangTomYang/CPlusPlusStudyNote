@@ -39,7 +39,6 @@ ostream &operator<<(ostream &cout, const String &str);
 ```
 #include "String.hpp"
 
-
 String::String(const char *cstring){
     assign(cstring);
 }
@@ -52,7 +51,6 @@ String::~String(){
     assign(NULL);
 }
 
-
 // ="cstring" 运算符重载
 String &String::operator=(const char *cstring){
     return  assign(cstring);
@@ -61,9 +59,6 @@ String &String::operator=(const char *cstring){
 String &String::operator=(const String &str){
     return  assign(str.m_cstring);
 }
-
-
-
 
 // 私有方法
 String &String::assign(const char *cstring){
@@ -88,9 +83,6 @@ String &String::assign(const char *cstring){
     return *this;
 }
 
-
-
-
 // 重载String 的 << 运算符
 ostream &operator<<(ostream &cout, const String &str){
     if(str.m_cstring == NULL ) return cout;
@@ -107,10 +99,7 @@ ostream &operator<<(ostream &cout, const String &str){
 using namespace std;
 #include "String.hpp"
 
-
-
 int main( ) {
-
     
     {
         //隐士构造 会调用单参数构造函数
@@ -126,7 +115,6 @@ int main( ) {
         // 重写String 赋值运算符 =, 否则造成 name2 堆空间2次释放
         name3 = name2;
         
-        
         cout << name3 << endl;
         
         cout << name1 <<  "\n" << name2 << endl;
@@ -137,7 +125,6 @@ int main( ) {
         
     }
    
-    
     getchar();
     return 0;
 }
