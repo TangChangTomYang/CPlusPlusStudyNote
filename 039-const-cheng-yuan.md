@@ -3,16 +3,20 @@
 
 
 <br>
-#### 一、const 成员介绍
-**1、const 成员: ** 被const 修饰的成员变量、非静态成员函数
+#### 一、const 成员介绍(成员变量和成员方法)
+**1、 被const 修饰的 成员变量 和 非静态成员函数(static 函数), 我们就称之为 const 成员(const 成员函数 和 const 成员函数)**
 
 
 
 <br>
-**2、const 成员变量**
-- 必须初始化(类内部初始化), 可以在声明的时候直接初始化赋值.
-- 非 static 的 const 成员变量, 还可以在初始化列表中初始化.
+**2、const 成员变量(2种)**
 
+- **1>  const 成员变量有2种, 一种是 静态的const 成员变量(eg: static const int msc_age), 另一种是非静态成const 成员变量(eg: const int mc_height)**
+
+- **2> 静态的const 成员变量(eg: static const int msc_age), 因为在整个程序中只有一份, 因此要在类外边初始化.**
+
+- **3> 非静态成const 成员变量(eg: const int mc_height) 可以在声明变量的同时初始化, 也在构造函数内初始化, 反正一句话,非静态const 成员必须在类内部初始化**
+![](/assets/Snip20190218_4.png)
 
 
 <br>
