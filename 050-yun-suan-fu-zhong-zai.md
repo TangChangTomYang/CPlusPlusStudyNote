@@ -69,7 +69,7 @@ Point operator+(const Point &p1, const Point &p2){ // 为了便于操作, 我们
 }
 
 
-/** 重载 << 打印point
+/** 重载 << 打印point, cout << p;
  cout 是 ostream 类型的一个对象
  */
 ostream &operator<<(ostream &cout, const Point p){ // 将这个重载运算符函数定义为Point的友元函数
