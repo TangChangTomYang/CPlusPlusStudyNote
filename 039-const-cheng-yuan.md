@@ -36,8 +36,24 @@
 **4、const函数 和 非const函数 构成函数重载**
 - 当const函数和非const函数构成重载后, 非const对象 优先调用非const 函数. const 对象优先调用const函数
 
-
-
+```
+//const 成员函数
+class Person {
+    int m_age;
+    static int age;
+    
+public:
+    
+    void test(){  // 非const 函数
+        cout << "void test()" << endl;
+    }
+    
+    void  test() const{ // const 函数
+        cout << "void  test() const" << endl;
+    }
+    
+};
+```
 
 <br>
 **5、** const 成员变量和一般的非const成员变量是一样的, 都会占用对象的内存空间, 只是const成员变量赋初值后就不能再改变了.
