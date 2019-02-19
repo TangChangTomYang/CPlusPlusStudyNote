@@ -51,7 +51,7 @@
 |操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx,intel 的是从右往左赋值, AT&T 是从左往右|
 |常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax, AT&T 的立即数需要在前面加 $ 符号|
 |jmp 指令| jmp `*`%edx <br> jmp `*`0x4001002<br> jmp `*`(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax] `(跳转到内存地址)`| AT&T汇编,jmp 指令跳转的地址前面要加 星号 `*` 说明, |
-|操作数长度| movl %eax,%edx <br> movb $0x10, %al <br> leaw 0x10(%dx),%ax| mov edx, eax<br> mov al, 0x10<br> lea ax,[dx+0x10]|
+|操作数长度| movl %eax,%edx <br> movb $0x10, %al <br> leaw 0x10(%dx),%ax| mov edx, eax<br> mov al, 0x10<br> lea ax,[dx+0x10]|`b`=byte(8bit)<br> `s`=short(16bit  或 32bit ) <br> `l`=long(32bit 或 64bit) <br> `q`=quad(64bit) <br> `t`=ten bytes(80 bit)|
 
 
 
