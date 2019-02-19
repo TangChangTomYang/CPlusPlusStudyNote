@@ -83,27 +83,28 @@ int a = 10;
 p = &a; // 此处即要用到 lea eax, [xxx];
 ```
 
-- ret 
-函数返回
+- **ret **
+函数返回,  返回到 call xxx(函数调用地方) 开始地方继续执行
 
-- xor op1, op2
+- **xor op1, op2**
 将 op1 和 op2 异或的结果赋值给op1, 类似于 op1 = op1 ^ op2;
 
-- add op1, op2
-类似于 op1 = op1 + op2;
+- **add op1, op2**
+将 op1与op2相加, 结果存于op1中, 类似于 op1 = op1 + op2 或 op1 += op2;
 
-- sub op1, op2
-类似于 op1 = op1 -op2;
+- **sub op1, op2**
+将op1-op2的值存于op1, 类似于 op1 = op1 -op2 或者 op1 -= op2;
 
-- inc op  //increase
+- **inc op ** //increase
 自增, 类似于 op = op + 1;
 
-- dec op  //decrease
+- **dec op ** //decrease
 自减, 类似于 op = op -1;
 
-- jmp 内存地址   // 类似于go to 语句  
+- **jmp 内存地址**   // 类似于go to 语句  
 跳转到某个内存地址去执行代码
-j 开头的一般都是跳转, 大多数是带条件的跳转, 一般跟 test/ cmp 等指令配合使用.
+<br>
+**j 开头的指令一般都是跳转指令, 大多数是带条件的跳转.(比如 : 一般跟 test/ cmp 等指令配合使用**.**
 
 
 
