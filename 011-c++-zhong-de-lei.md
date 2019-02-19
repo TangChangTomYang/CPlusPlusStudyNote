@@ -2,18 +2,27 @@
 
 
 **1、C++ 中可以使用 struct/ class 来定义一个类.**
-在C++中使用 Struct 和 class 来定义的类本质上是没有什么区别的, 只是在编译器层面, struct 定义的类 默认继承方式和访问权限都是 Public, 而使用class 定义的类默认继承方式和访问权限是private.即如下图: 
-
-![](/assets/Snip20190219_7.png)
 
 
 <br>
 **2、struct 和 class的相同点和不同点? **
 
-1> 在C++ 中 struct 和 class 都可以用来定义一个类.
-2> 当使用struct定义类是,默认的成员权限是 public. 而 使用 class 来定义类时,默认的成员权限是 private.
+- **1> 在C++ 中 struct 和 class 都可以用来定义一个类,本质上是一样的, 只是才C++编译器层面做了权限区别.**
+- **2> 当使用struct定义类时,默认继承方式和成员权限是 public. 而 使用 class 来定义类时,默认继承方式和成员权限是 private.**
+![](/assets/Snip20190219_7.png)
 
-![](/assets/Snip20190115_5.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
