@@ -47,10 +47,10 @@
 
 |项目|AT&T|Intel| 说明|
 |-|-|-|-|
-|寄存器名称| %eax|eax|Intel的不带%, AT&T 汇编需要在 寄存器名字前加 % 号|
-|操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx,intel 的是从右往左赋值, AT&T 是从左往右|
-|常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax, AT&T 的立即数需要在前面加 $ 符号|
-|jmp 指令| jmp `*`%edx <br> jmp `*`0x4001002<br> jmp `*`(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax] `(跳转到内存地址)`| AT&T汇编,jmp 指令跳转的地址前面要加 星号 `*` 说明, |
+|寄存器名称| %eax|eax|Intel的不带% <br> AT&T 汇编需要在 寄存器名字前加 % 号|
+|操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx <br> intel 的是从右往左赋值, AT&T 是从左往右|
+|常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax <br> AT&T 的立即数需要在前面加 $ 符号|
+|jmp 指令| jmp `*`%edx <br> jmp `*`0x4001002<br> jmp `*`(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax] `(跳转到内存地址)`| AT&T汇编中 jmp 指令地址前面要使用 `*` 修饰说明, |
 |操作数长度| movl %eax,%edx <br> movb $0x10, %al <br> leaw 0x10(%dx),%ax| mov edx, eax<br> mov al, 0x10<br> lea ax,[dx+0x10]|`b`=byte(8bit)<br> `s`=short(16bit  或 32bit ) <br> `l`=long(32bit 或 64bit) <br> `q`=quad(64bit) <br> `t`=ten bytes(80 bit)|
 
 
@@ -64,19 +64,24 @@ E 开头的寄存器是32bit 的, 占4字节**
 <br>
 #### 三、x64汇编要点总结
 
-- mov dest, src 
+- **mov dest, src **
 将src 的内容赋值给 dest, 类似于 dest = src
 
-- [地址值]
+- **[地址值]**
 中括号[ ]里面放的都是内存地址
 
-- word 是2字节, dword 是4字节(double word), qword 是 8 个字节(quad word)
+- **word 是2字节, dword 是4字节(double word), qword 是 8 个字节(quad word)**
 
-- call 函数地址
+- **call 函数地址**
 调用函数
 
-- lea dest, [地址值]
-将地址值赋值给dest, 类似于 dest = 地址值
+- **lea dest, [地址值]**
+将地址值赋值给dest, 类似于 dest = 地址值,比如:
+```
+int *p = NULL;
+int a = 10;
+p = &a; // 此处即要用到 lea eax, [xxx];
+```
 
 - ret 
 函数返回
