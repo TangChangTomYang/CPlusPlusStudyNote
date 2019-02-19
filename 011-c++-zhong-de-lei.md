@@ -2,6 +2,9 @@
 
 
 **1、C++ 中可以使用 struct/ class 来定义一个类.**
+在C++中使用 Struct 和 class 来定义的类本质上是没有什么区别的, 只是在编译器层面, struct 定义的类 默认继承方式和访问权限都是 Public, 而使用class 定义的类默认继承方式和访问权限是private.即如下图: 
+
+![](/assets/Snip20190219_7.png)
 
 
 <br>
