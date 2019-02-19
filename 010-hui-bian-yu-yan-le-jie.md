@@ -1,25 +1,29 @@
-#### 汇编语言了解
-
+#### 一、汇编语言了解(程序/电脑中内存的划分)
 
 ![](/assets/Snip20190116_3.png)
+
 
 **每个应用都有自己独立的内存空间, 其内存空间一般都有以下几大区域:**
 - **代码段(代码区)**<br>用于存放代码
 
 - **数据段(全局区)**<br>用于存放全局变量等
 
-- **栈空间**<br> 每调用一次函数就会给当前函数分配一段连续的栈空间,等函数调用调用完毕后会自动回收这段栈空间 
-(函数内定义的临时变量一般都是分配的栈空间, 不用管理内存回收(pop 回收))
-(栈平衡,调用时分配栈空间,调用完毕回收栈空间)
+- **栈空间**<br> 每一次调用函数就会给当前函数分配**(push)**一段连续的栈空间,等函数调用完毕后会自动回收**(pop)**这段栈空间 
+**(函数内定义的临时变量一般分配的都是栈空间, 栈空间不用程序员管理内存)**
+**(栈平衡,调用时分配栈空间,调用完毕回收栈空间)**
 
 - **堆空间**<br> 需要主动去申请和释放 
 ```
-Person *pson = new Person();
+   Person *pson = new Person(); // 在堆空间分配一个存储空间用来存储Person对象
+   delete pson; // 堆空间内存管理, 一个new 对应一个delete
+
+   int *p = new int(10); 在 堆空间分配4个字节(或者8个字节)用于存储10;
+   delete p;
 ```
 
 
 <br>
-####一、汇编语言的种类:
+####二、汇编语言的种类:
 - 8086汇编(16位)
 - x86汇编(32位)
 - x64汇编(64位)
@@ -28,8 +32,9 @@ Person *pson = new Person();
       - AT&T 汇编
 - arm汇编 (嵌入式/ 移动设备)
 
-
-汇编语言时不区分大小写的
+<br>
+**注意点:**
+**汇编语言(汇编指令)是不区分大小写的**
 
 
 
@@ -42,10 +47,10 @@ Person *pson = new Person();
 
 |项目|AT&T|Intel| 说明|
 |-|-|-|-|
-|寄存器名称| %eax|eax|Intel的不带%|
-|操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx|
-|常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax|
-|jmp 指令| jmp *%edx <br> jmp *0x4001002<br> jmp *(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax]| 在AT&T的jmp地址前面要加 型号 *|
+|寄存器名称| %eax|eax|Intel的不带%, AT&T 汇编需要在 寄存器名字前加 % 号|
+|操作数顺序| movl %eax, %edx| mov edx, eax| 将eax 的值赋值给edx,intel 的是从右往左赋值, AT&T 是从左往右|
+|常数\立即数|movl $3, %eax <br> movl $0x10 ,%eax| mov eax,3 <br> mov eax,0x10| 将3赋值给eax, AT&T 的立即数需要在前面加 $ 符号|
+|jmp 指令| jmp `*`%edx <br> jmp `*`0x4001002<br> jmp `*`(%eax)| jmp edx <br> jmp 0x4001002 <br> jmp [eax] `(跳转到内存地址)`| AT&T汇编,jmp 指令跳转的地址前面要加 星号 `*` 说明, |
 |操作数长度| movl %eax,%edx <br> movb $0x10, %al <br> leaw 0x10(%dx),%ax| mov edx, eax<br> mov al, 0x10<br> lea ax,[dx+0x10]|
 
 
