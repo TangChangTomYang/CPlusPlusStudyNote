@@ -36,7 +36,7 @@
 // 调用模板函数
 int a = 10;
 in b = 20;
-swapValues<int>(a, b);
+swapValues<int>(a, b); // 指明真实类型是 int 
 // 也可以省略(有些系统可以推到)
 swapValues(a, b);
 
