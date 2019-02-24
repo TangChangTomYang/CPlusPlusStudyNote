@@ -52,12 +52,13 @@ public:
 
 **1、将一个对象 直接赋值给另一个 未初始化的对象类型变量时, 就会调用拷贝构造函数, 构造一个新的对象**
 ```
-Person p1;
+Person p1("zhangsan");
 Person p2 = p1; // 会调用拷贝构造
 
 // 或者
-Person *p3 = new Person(10);
+Person *p3 = new Person("lisi");
 Person p4 = *p3; // 会调动拷贝构造
+
 ```
 **这种直接将一个对象直接赋值给另一个未初始化对象, 可以通过运算符重载来规避**
 
@@ -66,18 +67,25 @@ Person p4 = *p3; // 会调动拷贝构造
 <br>
 **2、将一个对象作为 单参数构造函数的参数时 会调用构造函数**
 ```
-Person p1;
+Person p1("zhangsan");
 Person *p2 = new Person(p1); // 会调用拷贝构造
 
 //或者
-Person *p3 = new Person(20);
+Person *p3 = new Person("lisi");
 Person p4 = new Person(*p3); // 会调用拷贝构造
 ```
 
+<br>
+**3、将一个对象赋值给另一个对象, 不会调用拷贝构造, 很危险, 容易在成堆空间被多次释放, 必须重载运算符解决**
+```
+Person p1("zhagnsan");
+Person p2("lisi");
 
+//此种情况属于浅拷贝, p1的地址不会变
+p1 = p2; 
+// 此种情况容易造成 p1 成员指向的堆空间无法释放, p2成员指向的堆空间 被 释放多次, 必须重载 = 运算符
 
-
-
+```
 
 
 
