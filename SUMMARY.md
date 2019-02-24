@@ -58,4 +58,5 @@
 * [051-运算符重载\(String\)](051yun-suan-fu-zhong-8f7d28-string.md)
 * [052-子类运算符重载需要调用父类的运算符重载](052zi-lei-yun-suan-fu-zhong-zai-xu-yao-diao-yong-fu-lei-de-yun-suan-fu-zhong-zai.md)
 * [053- C++ 中 完整的单例 示例](053-c++-zhong-wan-zheng-de-dan-li-shi-li.md)
+* [054- 仿函数\(函数对象\)](054-fang-han-657028-han-shu-dui-8c6129.md)
 
