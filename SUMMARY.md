@@ -56,4 +56,5 @@
 * [049-局部类](049ju-bu-lei.md)
 * [050- 运算符重载](050-yun-suan-fu-zhong-zai.md)
 * [051-运算符重载\(String\)](051yun-suan-fu-zhong-8f7d28-string.md)
+* [052-子类运算符重载需要调用父类的运算符重载](052zi-lei-yun-suan-fu-zhong-zai-xu-yao-diao-yong-fu-lei-de-yun-suan-fu-zhong-zai.md)
 
