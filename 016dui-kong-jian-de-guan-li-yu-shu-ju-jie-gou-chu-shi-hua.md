@@ -2,16 +2,24 @@
 
 
 <br>
-#### 一、堆空间的分配/ 回收
-```
-(一一对应, 不要写错了)
-malloc --> free     // C语言和C++ 中都支持(最原始的方式)
+#### 一、堆空间的管理(内存分配/ 回收)
 
-new --> delete      // C语言不支持,C++ 支持,相较malloc/free功能更强大
-new [] --> delete [] // C语言不支持,C++ 支持,相较malloc/free功能更强大
+**1、C/C++ 中堆空间的管理(内存分配/ 回收)的方法介绍(2类)**
+
 
 ```
-**方式一: malloc/ free **
+// C语言和C++ 中都支持(最原始的方式)
+malloc --> free   //(malloc和free 要一一对应, 否则容易造成内存问题)
+   
+// C语言不支持,C++ 支持,相较malloc/free功能更强大
+new --> delete    //(new和delete 要一一对应, 否则容易造成内存问题)
+new [] --> delete [] //(new和delete 要一一对应, 否则容易造成内存问题)
+```
+
+
+
+
+**2、malloc/ free 的使用介绍**
 C 语言/C++  中通用的做法  
 ```
 void test (){
@@ -28,22 +36,26 @@ void test (){
 
 
 <br>
-**方式二:**
-C++ 特有的做法
+**3、new/ free的使用介绍**
+只能用在C++中
 ```
 void test2(){
-int *p = new int ; // 在堆空间分配一个 int 的空间\
-int *pArr = new int[10]; // 申请10个连续的int 堆空间
-delete p; // 使用完毕, 释放申请的占空间
-delete[] pArr; // 在释放时一定要在delete 后加 []
+    int *p = new int ; // 在堆空间分配一个 int 的空间
+    int *pArr = new int[10]; // 申请10个连续的int 堆空间
+    delete p; // 使用完毕, 释放申请的占空间
+    delete[] pArr; // 在释放时一定要在delete 后加 []
 }
 ```
+**相较malloc/ free , new/ delete 做的事情要多一些.**
 
-相较malloc/ free , new/ delete 做的事情要多一些.
 
-new/ delete 在分配时会多做一些初始化动作比如: 
-1> 内存填充,如:CC 中断数.
-2> 触发构造函数的调用和析构函数的调用
+
+
+<br>
+**4的使用介绍new/ delete 究竟比 malloc/free 多做了什么?  **
+    - **1> 内存填充,如:CC 中断数.**
+    - **2> 触发构造函数的调用和析构函数的调用**
+    - **3> 因此能用new/delete 就不用 malloc/free**
 
 **注意点:**
 1> 申请堆空间成功后,会返回那一段内存空间的地址.(小地址)
