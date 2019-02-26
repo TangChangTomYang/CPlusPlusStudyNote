@@ -256,12 +256,13 @@ dispatch_async(dispatch_get_main_queue(), block);\
                         }
                     }
                 }
-                else if (weakSelf.webSocket.readyState == SR_CONNECTING) //正在连接
-                {
+                else if (weakSelf.webSocket.readyState == SR_CONNECTING){ //正在连接
+                
                     CTHLog(@"正在连接中，重连后会去自动同步数据");
                 }
-                else if (weakSelf.webSocket.readyState == SR_CLOSING || weakSelf.webSocket.readyState == SR_CLOSED) //断开连接
-                {
+                else if (weakSelf.webSocket.readyState == SR_CLOSING 
+                        || weakSelf.webSocket.readyState == SR_CLOSED) {//断开连接
+                
                     //调用 reConnectServer 方法重连,连接成功后 继续发送数据
                     [weakSelf reConnectServer];
                 }
