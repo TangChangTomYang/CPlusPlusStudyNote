@@ -182,20 +182,19 @@ dispatch_async(dispatch_get_main_queue(), block);\
     WS(weakSelf);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.reConnectTime *NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        if(weakSelf.webSocket.readyState == SR_OPEN && weakSelf.webSocket.readyState == SR_CONNECTING)
-        {
+        if(weakSelf.webSocket.readyState == SR_OPEN && 
+           weakSelf.webSocket.readyState == SR_CONNECTING){
             return;
         }
+        
         
         [weakSelf connectServer];
         CTHLog(@"正在重连......");
         
-        if(weakSelf.reConnectTime == 0)  //重连时间2的指数级增长
-        {
+        if(weakSelf.reConnectTime == 0){  //重连时间2的指数级增长
             weakSelf.reConnectTime = 2;
         }
-        else
-        {
+        else {
             weakSelf.reConnectTime *= 2;
         }
     });
@@ -203,8 +202,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //关闭连接
-- (void)SRWebSocketClose;
-{
+- (void)SRWebSocketClose{
     self.isActivelyClose = YES;
     [self webSocketClose];
     
@@ -216,45 +214,38 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //关闭连接
-- (void)webSocketClose
-{
-    if(self.webSocket)
-    {
+- (void)webSocketClose{
+    if(self.webSocket){
         [self.webSocket close];
         self.webSocket = nil;
     }
 }
 
 //发送数据给服务器
-- (void)sendDataToServer:(id)data
-{
+- (void)sendDataToServer:(id)data{
     [self.sendDataArray addObject:data];
     [self sendeDataToServer];
 }
 
 
-- (void)sendeDataToServer
-{
-    WS(weakSelf);
+- (void)sendeDataToServer{
     
+    WS(weakSelf);
     //把数据放到一个请求队列中
     dispatch_async(self.queue, ^{
         
-        //没有网络
-        if (AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable)
-        {
+         //没有网络
+         if(AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus 
+         == AFNetworkReachabilityStatusNotReachable){
             //开启网络检测定时器
             [weakSelf noNetWorkStartTestingTimer];
-        }
-        else //有网络
-        {
-            if(weakSelf.webSocket != nil)
-            {
+         }
+         else{ //有网络
+        
+            if(weakSelf.webSocket != nil){
                 // 只有长连接OPEN开启状态才能调 send 方法，不然会Crash
-                if(weakSelf.webSocket.readyState == SR_OPEN)
-                {
-                    if (weakSelf.sendDataArray.count > 0)
-                    {
+                if(weakSelf.webSocket.readyState == SR_OPEN){
+                    if (weakSelf.sendDataArray.count > 0) {
                         NSString *data = weakSelf.sendDataArray[0];
                         [weakSelf.webSocket send:data]; //发送数据
                         [weakSelf.sendDataArray removeObjectAtIndex:0];
