@@ -22,7 +22,7 @@
 
 
 **补充:**
-1> new/delete 和 malloc/ free 是和堆空间的内管管理相关的,如果和多空间扯不上关系,那么和new/delete/malloc/free 也扯不上关系
+new/delete 和 malloc/ free 是和堆空间的内管管理相关的,如果和多空间扯不上关系,那么和new/delete/malloc/free 也扯不上关系
 
 
 
