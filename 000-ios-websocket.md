@@ -41,27 +41,30 @@ if ([NSThread isMainThread]) {\
 block();\
 } else {\
 dispatch_async(dispatch_get_main_queue(), block);\
-}
+}\
 
 
 #import "WebSocketManager.h"
 
 @interface WebSocketManager()<SRWebSocketDelegate>
-
-@property (nonatomic, strong) NSTimer *heartBeatTimer; //心跳定时器
-@property (nonatomic, strong) NSTimer *netWorkTestingTimer; //没有网络的时候检测网络定时器
-@property (nonatomic, strong) dispatch_queue_t queue; //数据请求队列（串行队列）
-@property (nonatomic, assign) NSTimeInterval reConnectTime; //重连时间
-@property (nonatomic, strong) NSMutableArray *sendDataArray; //存储要发送给服务端的数据
-@property (nonatomic, assign) BOOL isActivelyClose;    //用于判断是否主动关闭长连接，如果是主动断开连接，连接失败的代理中，就不用执行 重新连接方法
-
+//心跳定时器
+@property (nonatomic, strong) NSTimer *heartBeatTimer; 
+//没有网络的时候检测网络定时器
+@property (nonatomic, strong) NSTimer *netWorkTestingTimer;
+//数据请求队列（串行队列） 
+@property (nonatomic, strong) dispatch_queue_t queue; 
+//重连时间
+@property (nonatomic, assign) NSTimeInterval reConnectTime; 
+//存储要发送给服务端的数据
+@property (nonatomic, strong) NSMutableArray *sendDataArray; 
+////用于判断是否主动关闭长连接，如果是主动断开连接，连接失败的代理中，就不用执行 重新连接方法
+@property (nonatomic, assign) BOOL isActivelyClose;    
 @end
 
 @implementation WebSocketManager
 
 //单例
-+ (instancetype)sharedSocketManager
-{
++ (instancetype)sharedSocketManager{
     static WebSocketManager *_instace = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken,^{
@@ -70,11 +73,9 @@ dispatch_async(dispatch_get_main_queue(), block);\
     return _instace;
 }
 
-- (instancetype)init
-{
+- (instancetype)init{
     self = [super init];
-    if(self)
-    {
+    if(self){
         self.reConnectTime = 0;
         self.isActivelyClose = NO;
         self.queue = dispatch_queue_create("BF",NULL);
@@ -83,16 +84,13 @@ dispatch_async(dispatch_get_main_queue(), block);\
     return self;
 }
 
-#pragma mark - NSTimer
 
+
+#pragma mark - NSTimer
 //初始化心跳
-- (void)initHeartBeat
-{
+- (void)initHeartBeat{
     //心跳没有被关闭
-    if(self.heartBeatTimer)
-    {
-        return;
-    }
+    if(self.heartBeatTimer)  return; 
     
     [self destoryHeartBeat];
     
@@ -104,12 +102,10 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //取消心跳
-- (void)destoryHeartBeat
-{
+- (void)destoryHeartBeat{
     WS(weakSelf);
     dispatch_main_async_safe(^{
-        if(weakSelf.heartBeatTimer)
-        {
+        if(weakSelf.heartBeatTimer){
             [weakSelf.heartBeatTimer invalidate];
             weakSelf.heartBeatTimer = nil;
         }
@@ -117,8 +113,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //没有网络的时候开始定时 -- 用于网络检测
-- (void)noNetWorkStartTestingTimer
-{
+- (void)noNetWorkStartTestingTimer{
     WS(weakSelf);
     dispatch_main_async_safe(^{
         weakSelf.netWorkTestingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(noNetWorkStartTesting) userInfo:nil repeats:YES];
@@ -127,12 +122,10 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //取消网络检测
-- (void)destoryNetWorkStartTesting
-{
+- (void)destoryNetWorkStartTesting{
     WS(weakSelf);
     dispatch_main_async_safe(^{
-        if(weakSelf.netWorkTestingTimer)
-        {
+        if(weakSelf.netWorkTestingTimer){
             [weakSelf.netWorkTestingTimer invalidate];
             weakSelf.netWorkTestingTimer = nil;
         }
@@ -142,24 +135,20 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #pragma mark - private -- webSocket相关方法
 
 //发送心跳
-- (void)senderheartBeat
-{
+- (void)senderheartBeat{
     //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
     WS(weakSelf);
     dispatch_main_async_safe(^{
-        if(weakSelf.webSocket.readyState == SR_OPEN)
-        {
+        if(weakSelf.webSocket.readyState == SR_OPEN){
             [weakSelf.webSocket sendPing:nil];
         }
     });
 }
 
 //定时检测网络
-- (void)noNetWorkStartTesting
-{
+- (void)noNetWorkStartTesting{
     //有网络
-    if(AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus != AFNetworkReachabilityStatusNotReachable)
-    {
+    if(AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus != AFNetworkReachabilityStatusNotReachable){
         //关闭网络检测定时器
         [self destoryNetWorkStartTesting];
         //开始重连
@@ -168,12 +157,10 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //建立长连接
-- (void)connectServer
-{
+- (void)connectServer{
     self.isActivelyClose = NO;
     
-    if(self.webSocket)
-    {
+    if(self.webSocket){
         self.webSocket = nil;
     }
     
@@ -184,15 +171,10 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 //重新连接服务器
-- (void)reConnectServer
-{
-    if(self.webSocket.readyState == SR_OPEN)
-    {
-        return;
-    }
+- (void)reConnectServer{
+    if(self.webSocket.readyState == SR_OPEN)  return; 
     
-    if(self.reConnectTime > 1024)  //重连10次 2^10 = 1024
-    {
+    if(self.reConnectTime > 1024){  //重连10次 2^10 = 1024
         self.reConnectTime = 0;
         return;
     }
