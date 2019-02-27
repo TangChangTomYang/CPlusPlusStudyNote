@@ -62,4 +62,5 @@
 * [054- 仿函数\(函数对象\)](054-fang-han-657028-han-shu-dui-8c6129.md)
 * [055-模板 \(template\)](055mo-ban-template.md)
 * [056-类模板](056lei-mo-ban.md)
+* [057-C++辅助](057-cfu-zhu.md)
 
