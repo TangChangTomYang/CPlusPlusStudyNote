@@ -66,4 +66,38 @@ void testConstCast(){
 ```
 
 
+<br>
+**4、dynamic_cast**
+**一般用于多态类型的转换, 有运行时安全监测**
+
+```
+class Person{
+public:
+    int m_age;
+    Person(int  age):m_age(age){
+        
+    }
+};
+
+class Student : public Person{
+    
+};
+
+class Car{
+    
+}
+
+// 一般用于多态类型的转换, 有运行时安全监测
+// dynamic_cast<Student *>(p1) 相较于 (Student *)p1 更安全, 不会出现野指针错误
+void testDynamicCast(){
+    
+    Person *p1 = new Person();
+    Person *p2 = new Student();
+    
+    Student *stu1 = dynamic_cast<Student *>(p1); // NULL
+    Student *stu2 = dynamic_cast<Student *>(p2);
+    Car *car = dynamic_cast<Car *>(p1); // NULL
+    
+}
+```
 
