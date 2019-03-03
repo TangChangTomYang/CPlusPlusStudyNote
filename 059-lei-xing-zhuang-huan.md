@@ -102,9 +102,48 @@ void testDynamicCast(){
     Person *p1 = new Person(10);
     Person *p2 = new Student(20);
     
+
     Student *stu1 = dynamic_cast<Student *>(p1); // NULL
     Student *stu2 = dynamic_cast<Student *>(p2);
     Car *car = dynamic_cast<Car *>(p1); // NULL
 }
 ```
+
+**注意:**
+**dynamic_cast<type >(expression); 中的对象,必须有多态, 否则不能使用 dynamic_cast 类型转换**
+
+<br>
+**5、 static_cast**
+- 对比 dynamic_cast ,static_cast 缺乏运行时安全检测.
+- 不能交叉转换(不是同一继承体系的, 无法转换)
+- 常用于基本数据类型的转换, 常用于非const 转换成const
+```
+// static_cast 和 dynamic_cast 差不多
+// static_cast 内有dynamic_cast运行时动态检测, 数据不安全
+// static 只能用于同一继承体系下的 转换
+void testStaticcast(){
+    
+    Person *p1 = new Person(10);
+    Person *p2 = new Student(20);
+    
+    Student *stu1 = static_cast<Student *>(p1); // 不安全
+    Student *stu2 = static_cast<Student *>(p2);
+//    Car *car = static_cast<Car *>(p1); // 只有同一继承体系才可以
+    
+    // 常用于基本数据类型的转换 和 非const 转成const
+    int a = 0;
+    double b = static_cast<double>(a);
+    const Person *p3 = static_cast<Person *>(p1);
+}
+```
+
+
+
+
+<br>
+**6、 reinterpret_cast**
+
+**1> 属于比较底层的强制转换,没有任何类型检查和格式转换, 仅仅是简单的二进制数据拷贝**
+**2> 可以交叉转换**
+
 
