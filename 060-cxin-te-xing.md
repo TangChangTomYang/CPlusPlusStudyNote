@@ -33,6 +33,7 @@ typeof(self) weakSelf = self; 的感觉
 
 #### nullptr
 **1 可以解决NULL的二义性问题**
+**2 专门用于清空指针的**
 
 ```
 void func(int a){
@@ -55,3 +56,27 @@ p = nullptr; // 现在清空指针一般使用nullptr
 
 
 
+#### 遍历
+```
+// 以前是这样的
+int array[] = {10,20,30,40};
+int length = sizeof(array)/ sizeof(int);
+for (int i = 0 ; i < length ; i++){
+    cout << array[i] << endl;
+}
+
+// 现在可以这样
+for (int item in array){
+    cout << item << endl;
+}
+```
+
+
+#### 更简单的初始化方式
+```
+// 以前
+int array[] = {10,20,30,40};
+
+// 现在, 直接省略 = 
+int array{10,20,30,40};
+```
