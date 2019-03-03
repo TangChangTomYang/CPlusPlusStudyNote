@@ -98,16 +98,24 @@ int array{10,20,30,40};
 - **return type: 返回值类型**
 - **function body: 函数体**
 
-有时可以省略部分参数
+**有时可以省略部分参数**
+```
 [capture list](params list)-> return type{function body}
 [capture list] (params list) {function body}
 [capture list]{funtion body}
 ```
-// 
-int p(int a, int b) = [](int a, int b)-> int{
+
+**示例如下:**
+```
+//  指向函数的指针, 可以指向lambda 表达式
+int (*p)(int a, int b) = [](int a, int b)-> int{
     return a + b;
 };
+p (10, 20); // 调用lambda 表达式
 
-p (10, 20);
+// lambda 表达式, 可以省略表达式类型
+int (*p1)(int a, int b) = [](int a, int b){
+    return a + b;
+}
 ```
-1:25
+ 
