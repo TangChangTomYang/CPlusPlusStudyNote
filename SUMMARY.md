@@ -64,4 +64,5 @@
 * [056-类模板](056lei-mo-ban.md)
 * [057-C++辅助](057-cfu-zhu.md)
 * [058-程序的内存](058cheng-xu-de-nei-cun.md)
+* [059- 类型装换](059-lei-xing-zhuang-huan.md)
 
