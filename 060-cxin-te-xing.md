@@ -23,4 +23,35 @@ p->m_age = 30;
 
 #### decltype
 **1 可以获取变量的类型**
+```
+int a = 10;
+decltype(a) b = 20; // int 
+有点
+typeof(self) weakSelf = self; 的感觉
+```
+
+
+#### nullptr
+**1 可以解决NULL的二义性问题**
+
+```
+void func(int a){
+    cout << "void func(int a) " << a << endl;
+}
+
+void func(int *a){
+    cout << "void func(int *a) " << a << endl;
+}
+
+func(0);
+func(NULL); // 以前使用 NULL 相当于0,会有二义性
+func(nullptr); // nullptr 就是空指针
+
+int a = 0;
+int *p = &a;
+p = NULL ;
+p = nullptr; // 现在清空指针一般使用nullptr
+```
+
+
 
