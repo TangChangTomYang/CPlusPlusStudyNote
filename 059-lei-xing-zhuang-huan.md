@@ -43,7 +43,7 @@ public:
 ```
 
 **3、const_cast 类型转换**
-**一般用于去除 const 属性, 将const转换成非const**
+**一般用于去除 const 属性, 将const转换成非const, 更专业**
 
 ```
 // const_cast 将const 强制转换陈 非 const
@@ -68,7 +68,7 @@ void testConstCast(){
 
 <br>
 **4、dynamic_cast**
-**一般用于多态类型的转换, 有运行时安全监测**
+**一般用于多态类型的转换, 有运行时安全监测, 更安全**
 
 ```
 class Person{
