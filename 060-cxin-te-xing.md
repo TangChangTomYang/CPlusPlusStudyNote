@@ -88,8 +88,22 @@ int array{10,20,30,40};
 
 
 #### Lambda 表达式
-**1 Lambda 表达式, 有点类似于javaScript中的闭包/ iOS 中的Block/ 本质就是函数**
+**1 Lambda 表达式, 有点类似于javaScript中的闭包/ iOS 中的Block/ 本质就是函数(可以直接当做函数来使用)**
+
+**2 完整结构: [capture List](params List)mutable exception -> return type{function body}**
+- **capture list: 捕获外部变量列表**
+- **params list: 形参列表, 不能使用默认参数, 不能省略参数名**
+- **mutable:用来说明是否可以修改捕获的变量**
+- **exception: 异常设定**
+- **return type: 返回值类型**
+- **function body: 函数体**
+
+有时可以省略部分参数
+[capture list](params list)-> return type{function body}
+[capture list] (params list) {function body}
+[capture list]{funtion body}
 ```
+// 
 int p(int a, int b) = [](int a, int b)-> int{
     return a + b;
 };
