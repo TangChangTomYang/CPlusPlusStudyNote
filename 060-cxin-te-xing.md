@@ -80,3 +80,20 @@ int array[] = {10,20,30,40};
 // 现在, 直接省略 = 
 int array{10,20,30,40};
 ```
+
+
+
+
+
+
+
+#### Lambda 表达式
+**1 Lambda 表达式, 有点类似于javaScript中的闭包/ iOS 中的Block/ 本质就是函数**
+```
+int p(int a, int b) = [](int a, int b)-> int{
+    return a + b;
+};
+
+p (10, 20);
+```
+1:25
