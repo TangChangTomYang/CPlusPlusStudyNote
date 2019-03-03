@@ -147,3 +147,4 @@ void testStaticcast(){
 **2> 可以交叉转换**
 
 
+![](/assets/Snip20190303_2.png)
