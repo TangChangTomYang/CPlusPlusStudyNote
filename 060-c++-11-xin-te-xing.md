@@ -46,3 +46,36 @@ void decltypeDemo(){
     pson->run();
 }
 ```
+
+
+
+
+<br>
+#### 三、nullptr 空指针关键字
+**1、 在C++ 11 中新增了 nullptr 空指针关键字, 专门用于清空指针**
+**2、 因为 NULL 和数字0 是等价的, 因此一个为NULL的指针变量和为 0 的int 变量很难分开, 会产生二义性, 因此在 C++11 中出现了 nullptr **
+**3、 nullptr 就是专门用于解决 int=0的变量和 int`*`=0 的指针的二义性的**
+
+
+<br>**示例如下: **
+```
+void func(int  a){
+    cout << "void func(int " << a << ")"<< endl;
+}
+
+void func(int  *p){
+    cout << "void func(int *" << p << ")"<< endl;
+}
+// nullptr 专门用于清空指针 (替代NULL)
+// 解决 NULL带来的二义性(NULL == 0)问题
+void nullptrDemo(){
+    
+    func(0);
+    func(nullptr); // 等价于 int *p = null, 是一个空指针
+    //func(NULL);  // 系统不知道是调用哪一个, 有二义性
+    
+    if (NULL == 0) {
+        cout << "NULL == 0, 即NULL完全等价于0" << endl;
+    }
+}
+```
