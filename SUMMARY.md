@@ -66,4 +66,5 @@
 * [058-程序的内存](058cheng-xu-de-nei-cun.md)
 * [059- 类型装换](059-lei-xing-zhuang-huan.md)
 * [060-C++ 11 新特性](060-c++-11-xin-te-xing.md)
+* [061-lambda 表达式](061-lambda-biao-da-shi.md)
 
