@@ -79,3 +79,29 @@ void nullptrDemo(){
     }
 }
 ```
+
+
+
+
+
+
+
+<br>
+#### 四、数组快速遍历 (for(xxx : yyy)) 与 更简洁初始化新特性
+
+<br>**示例如下: **
+```
+// 快速遍历新特性
+void kuaiSuBianliDemo(){
+    int arr[] = {1,2,3,4,5,6,7};
+    for (int  item : arr){ // 快速遍历使用的是 : 冒号, 而不是 in 关键字
+        cout << "item: "  << item << endl;
+    }
+    
+    // 更加简洁的初始化
+    int arr2[]{11,12,3,14,15,16,17}; // 快速初始化, 可以省略 赋值运算符 '='
+    for (int item : arr2){
+       cout << "---item: "  << item << endl;
+    }
+}
+```
