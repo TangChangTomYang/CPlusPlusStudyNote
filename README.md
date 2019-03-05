@@ -41,7 +41,7 @@ disconnect
 ![](/assets/Snip20190122_4.png)
 
 
-☆030- 虚表
+☆032- 虚 析构函数
 
 
 

@@ -54,24 +54,38 @@ public:
         cout << "~GoodStudent::GoodStudent()" << endl;
     }
 };
+```
+
+**测试**
+```
 
 int main( ) {
     
 //    Person *pson = new Student();
 //    pson-> run();
 //    delete  pson;
-    /** 打印结果:
-     Person::Person()
-     Student::Student()
-     
-     void Student::run()
-     
-     ~Person::Person()
+}
+```
 
-     1> 可以发现 析构的流程是正确的, run 方法也是调用的Student 的方法是正确的
-     2> 但是析构函数是错误的, 没有调用Student的析构, 只是调用了 Person的析构, 这时因为没有把析构函数定义为 虚析构函数, 非析构函数的调用 只与调用方法当时的指针类型有关系, 和指向的对象的真实类型无关
-     */
-    
+**打印结果:**
+```
+ Person::Person()
+ Student::Student()
+ 
+ void Student::run()
+ ~Person::Person()
+```
+
+- **1> 可以发现 析构的流程是正确的, run 方法也是调用的Student 的方法是正确的**
+- **2> 但是析构函数是错误的, 没有调用Student的析构, 只是调用了 Person的析构, 这时因为没有把析构函数定义为 虚析构函数, 非析构函数的调用 只与调用方法当时的指针类型有关系, 和指向的对象的真实类型无关**
+   
+  
+  
+ <br>
+**测试** 
+```
+int main( ) {
+
     Student *stu = new GoodStudent();
     stu -> run();
     delete  stu;
