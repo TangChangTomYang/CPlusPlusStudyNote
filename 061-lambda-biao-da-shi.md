@@ -3,7 +3,6 @@
 **1、lambda 表达式有点类似于JavaScript中的闭包, iOS中的block, 其本事就是函数
 **
 
- 
 **2、lambda 表达式完整的结构:
  `[`capture List`](`params List`)`mutable Exception -> return Type`{`
 &emsp;&emsp;&emsp;function body
