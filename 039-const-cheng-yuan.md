@@ -12,23 +12,22 @@
 <br>
 **2、const 成员变量(2种)**
 
-- **1>  const 成员变量有2种, 一种是 静态的const 成员变量(eg: static const int msc_age), 另一种是非静态成const 成员变量(eg: const int mc_height)**
-
-- **2> 静态的const 成员变量(eg: static const int msc_age), 因为在整个程序中只有一份, 因此要在类外边初始化.**
-
-- **3> 非静态成const 成员变量(eg: const int mc_height) 可以在声明变量的同时初始化, 也在构造函数内初始化, 反正一句话,非静态const 成员必须在类内部初始化**
+- **1> 一种是 静态的const 成员变量`(eg: static const int msc_age)`**
+    - 因为静态的 const成员变量 `(eg: static const int msc_age)`在整个程序中只有一份, 因此必须类外边初始化.
+- **2> 另一种是非静态成const 成员变量 `(eg: const int mc_height)`**
+    - 因为const成员是不能修改的, 因此const成员变量必须类内初始化(对象初识化时初始化)
 ![](/assets/Snip20190218_4.png)
 
 
 <br>
 **3、const 成员函数(非静态)**
-- const 关键字写在参数列表的后面, 函数的声明和实现都必须带const
-- 内部不能修改非static成员变量
-- 内不只能调用const成员函数、static 成员函数
-- 非const 成员函数可以调用const 成员函数
-- const 成员函数和非const 成员函数构成重载
-- 非const 对象(指针)优先调用非const成员函数
-- const对象(指针)只能调用const成员函数、static 成员函数
+- **1> const 关键字写在参数列表的后面, 且函数的声明和实现都必须带const**
+- **2> 内部不能修改非 static成员变量**
+- **3> 内不只能调用 const成员函数 和 static 成员函数**
+- **4> 非 const 成员函数可以调用const 成员函数, const 成员函数不能调用非const成员函数**
+- **5> const 成员函数和非const 成员函数构成重载**
+- **6> 非const 对象(指针)优先调用非const成员函数**
+- **const对象(指针)只能调用const成员函数、static 成员函数**
 
 
 
