@@ -41,7 +41,7 @@ disconnect
 ![](/assets/Snip20190122_4.png)
 
 
-☆037- 菱形继承
+☆038-静态成员 static 没看完
 
 
 
