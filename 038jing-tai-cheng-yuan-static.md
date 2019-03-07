@@ -23,15 +23,15 @@
 
 
 
-
-**3、静态成员函数**
-1> 静态成员函数内部不能使用this 指针 (this 指针只能在非静态成员函数内部使用).
-2> 静态成员函数,不能是虚函数(虚函数只能是非静态函数)
-3> 内部不能访问费静态成员变量/成员函数, 只能访问静态的成员变量/ 静态函数.
-4> 非静态成员函数内部可以访问静态成员变量/ 静态函数
-5> 构造函数/ 析构函数不能是静态函数
-6> 当声明和实现分离时, 实现的部分不能带 static.
-
+<br>
+**4、静态成员函数的特点**
+- **1> 静态成员函数内部不能使用this 指针 `(this 指针只能在非静态成员函数内部使用)`.**
+- **2> 静态成员函数,不能是虚函数`(虚函数只能是非静态函数)`**
+- **3> 内部不能访问非静态成员变量/成员函数, 只能访问静态的成员变量/ 静态函数.`(因为内部没有this指针, 你也访问不了)**
+- **4> 非静态成员函数内部可以访问静态成员变量/ 静态函数 **
+- **5> 构造函数/ 析构函数不能是静态函数**
+- **6> 当声明和实现分离时, 实现的部分不能带 static.**
+- **7>静态成员变量,不占用对象内存空间**
 
 
 
@@ -39,19 +39,22 @@
 ```
 #include <iostream>
 using namespace std;
+
 class Car{
 
 public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
-static int ms_price; // 静态成员变量
-int m_wheelCout; // 非静态成员变量
-public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
-static void run(){ // 静态成员函数
-cout << "static void run()" << endl;
-}
-void display(){ // 非静态成员函数
-cout << "void display()" << endl;
-}
+    static int ms_price; // 静态成员变量
+    int m_wheelCout; // 非静态成员变量
+    public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
+    
+    static void run(){ // 静态成员函数
+        cout << "static void run()" << endl;
+    }
+    void display(){ // 非静态成员函数
+        cout << "void display()" << endl;
+    }
 };
+
 // 必须在类外面初始化,静态成员变量
 int  Car::ms_price = 20;
 
