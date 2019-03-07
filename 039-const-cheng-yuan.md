@@ -1,10 +1,11 @@
 #### const 成员
 
 
-
 <br>
-#### 一、const 成员介绍(成员变量和成员方法)
-**1、 被const 修饰的 成员变量 和 非静态成员函数(static 函数), 我们就称之为 const 成员(const 成员函数 和 const 成员函数)**
+#### 一、const 成员
+**1 什么是const 成员?**
+- **1> 被 `const` 关键字修饰的 成员变量/ 成员方法, 就是const 成员**
+- **2> const 成员分为 const成员方法 和 cosnt成员函数**
 
 
 
