@@ -45,7 +45,6 @@ class Car{
 public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
     static int ms_price; // 静态成员变量
     int m_wheelCout; // 非静态成员变量
-    public: // 静态成员可以使用 public/ protected/ privated 修饰访问权限
     
     static void run(){ // 静态成员函数
         cout << "static void run()" << endl;
@@ -55,9 +54,11 @@ public: // 静态成员可以使用 public/ protected/ privated 修饰访问权�
     }
 };
 
-// 必须在类外面初始化,静态成员变量
+// 静态成员变量, 必须在类外面初始化,且不能带 static 
 int  Car::ms_price = 20;
 
+
+// ???
 int g_age; // 全局变量, 编译器默认会在前面添加 static  修饰, 相当于 static int g_age;
 void test(){ // 全局函数,编译器默认会在前面添加 static  修饰
     
@@ -156,13 +157,14 @@ cout << sizeof(Person) << endl; // 结果 1字节
 #include <iostream>
 using namespace std;
 
-
 class Person {
 public:
     static int ms_age;
 };
 
+// 初识静态成员变量
 int  Person::ms_age = 0;
+
 class Student : public Person{
     
 };
@@ -193,14 +195,13 @@ int main( ) {
 #### 二、静态成员变量的经典实用案例----单例模式
 
 
-C++中单例的使用
+**1、 C++中单例的使用**
+- **1> 将 构造函数私有化, 不允许外部访问**
+- **2> 定义一个 静态的 私有的 当前类指针**
+- **3> 提供一个静态的成员函数公共的接口访问 这个静态的 私有的 当前类指针**
+- **4> 如果有 销毁单例的要求, 需要再写一个 静态成员方法给外部访问 删除单例**
+
 ```
-/** C++ 中的单例的使用
- 1. 将 构造函数私有化, 不允许外部访问
- 2. 定义一个 静态的 私有的 当前类指针
- 3. 提供一个静态的成员函数公共的接口访问 这个静态的 私有的 当前类指针
- 4. 如果有 销毁单例的要求, 需要再写一个 静态成员方法给外部访问 删除单例
- */
 class TcpTool{
 public:
    static TcpTool *shareTool(){ // 提供对外的 当前类指针接口
@@ -228,6 +229,7 @@ private:
         cout << "~TcpTool()" << endl;
     }
 };
+
 TcpTool *TcpTool::ms_tool = NULL ; // 静态成员初始化
 
 
