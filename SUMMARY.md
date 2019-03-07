@@ -44,7 +44,6 @@
 * [037- 菱形继承](037-ling-xing-ji-cheng.md)
 * [038-静态成员 static](038jing-tai-cheng-yuan-static.md)
 * [039-const 成员](039-const-cheng-yuan.md)
-* [001-字符串常识](041kao-bei-gou-zao-han-shu/001zi-fu-chuan-chang-shi.md)
 * [040-引用类型的成员](040yin-yong-lei-xing-de-cheng-yuan.md)
 * [041-拷贝构造函数](041kao-bei-gou-zao-han-shu.md)
 * [042-C语言C++字符串常识](042-cyu-yan-c-zi-fu-chuan-chang-shi.md)
