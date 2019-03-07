@@ -41,7 +41,7 @@ disconnect
 ![](/assets/Snip20190122_4.png)
 
 
-☆038-静态成员 static 没看完
+☆043- 对象类型参数和返回值**
 
 
 
