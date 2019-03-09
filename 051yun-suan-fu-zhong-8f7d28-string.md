@@ -13,8 +13,9 @@ using namespace std;
 class String{
     friend ostream &operator<<(ostream &cout, const String &str);
     friend bool operator>(const char *cstring1, const String &str);
-    // 这个是安全处理
-    char *m_cstring = NULL; // Xcode C++ char* 成员变量有个特点, 默认会置为 "", 没搞懂
+    
+    // 赋值为NULL是安全处理
+    char *m_cstring = NULL; // Xcode C++ char* 成员变量有个特点, 默认会置为 ""
 public:
     /******构造函数**********************************/
     String(const char *csting = "");
