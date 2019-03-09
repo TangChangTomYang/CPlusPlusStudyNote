@@ -1,6 +1,5 @@
 # Summary
 
-* [000-iOS webSocket](000-ios-websocket.md)
 * [Introduction](README.md)
 * [000- C 语言基础](000-c-yu-yan-ji-chu.md)
   * [001-指向函数的指针](000-c-yu-yan-ji-chu/001zhi-xiang-han-shu-de-zhi-zhen.md)
